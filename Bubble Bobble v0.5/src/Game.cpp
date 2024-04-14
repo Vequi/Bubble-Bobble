@@ -10,6 +10,9 @@ Game::Game()
     state = GameState::MAIN_MENU;
     scene = nullptr;
     img_menu = nullptr;
+    img_insertcoin = nullptr;
+    img_player_selc = nullptr;
+
 
     target = {};
     src = {};
@@ -87,11 +90,23 @@ AppStatus Game::LoadResources()
 {
     ResourceManager& data = ResourceManager::Instance();
 
-    if (data.LoadTexture(Resource::IMG_MENU, "images/menu.png") != AppStatus::OK)
+    if (data.LoadTexture(Resource::IMG_MENU, "BubbleBobble_Art/UI/Title1.png") != AppStatus::OK)
     {
         return AppStatus::ERROR;
     }
     img_menu = data.GetTexture(Resource::IMG_MENU);
+
+    if (data.LoadTexture(Resource::IMG_INSERTCOIN, "BubbleBobble_Art/UI/InsertCoinScreenBB.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_insertcoin = data.GetTexture(Resource::IMG_INSERTCOIN);
+
+    if (data.LoadTexture(Resource::IMG_PLAYER_SELC, "BubbleBobble_Art/UI/SelectPlayerScreenBB.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_player_selc = data.GetTexture(Resource::IMG_PLAYER_SELC);
 
     return AppStatus::OK;
 }
@@ -135,11 +150,26 @@ AppStatus Game::Update()
         if (IsKeyPressed(KEY_SPACE))
         {
             if (BeginPlay() != AppStatus::OK) return AppStatus::ERROR;
-            state = GameState::PLAYING;
+            state = GameState::INSERT_COIN;
 
         }
         break;
+    case GameState::INSERT_COIN:
 
+        if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
+        if (IsKeyPressed(KEY_SPACE))
+        {
+            state = GameState::PLAYER_SELC;
+        }
+        break;
+    case GameState::PLAYER_SELC:
+
+        if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
+        if (IsKeyPressed(KEY_SPACE))
+        {
+            state = GameState::PLAYING;
+        }
+        break;
     case GameState::PLAYING:
         if (IsKeyPressed(KEY_ESCAPE))
         {
@@ -189,6 +219,8 @@ void Game::UnloadResources()
 {
     ResourceManager& data = ResourceManager::Instance();
     data.ReleaseTexture(Resource::IMG_MENU);
+    data.ReleaseTexture(Resource::IMG_INSERTCOIN);
+    data.ReleaseTexture(Resource::IMG_PLAYER_SELC);
 
     UnloadRenderTexture(target);
 }

@@ -15,6 +15,7 @@ public:
 
 	void SetPos(const Point& p);
 	void Update();
+	void Teleport();
 	AABB GetHitbox() const;
 
 	//Draw representation model

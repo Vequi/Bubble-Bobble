@@ -196,7 +196,12 @@ void Game::Render()
     case GameState::MAIN_MENU:
         DrawTexture(*img_menu, 0, 0, WHITE);
         break;
-
+    case GameState::INSERT_COIN:
+        DrawTexture(*img_insertcoin, 0, 0, WHITE);
+        break;
+    case GameState::PLAYER_SELC:
+        DrawTexture(*img_player_selc, 0, 0, WHITE);
+        break;
     case GameState::PLAYING:
         scene->Render();
         break;

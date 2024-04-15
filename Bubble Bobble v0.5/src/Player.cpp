@@ -46,12 +46,12 @@ AppStatus Player::Initialise()
 	sprite->AddKeyFrame((int)PlayerAnim::IDLE_LEFT, { 0 * n, 0 * n, n, n });
 	sprite->AddKeyFrame((int)PlayerAnim::IDLE_LEFT, { 2 * n, 0 * n, n, n });
 
-	sprite->SetAnimationDelay((int)PlayerAnim::WALKING_RIGHT, 5);
-	for (i = 0; i < 5; ++i)
+	sprite->SetAnimationDelay((int)PlayerAnim::WALKING_RIGHT, ANIM_DELAY);
+	for (i = 1; i < 5; ++i)
 		sprite->AddKeyFrame((int)PlayerAnim::WALKING_RIGHT, { (float)i*n, 0*n, -n, n});
 
-	sprite->SetAnimationDelay((int)PlayerAnim::WALKING_LEFT, 5);
-	for (i = 0; i < 5; ++i)
+	sprite->SetAnimationDelay((int)PlayerAnim::WALKING_LEFT, ANIM_DELAY);
+	for (i = 1; i < 5; ++i)
 		sprite->AddKeyFrame((int)PlayerAnim::WALKING_LEFT, { (float)i*n, 0*n, n, n });
 
 	sprite->SetAnimationDelay((int)PlayerAnim::FALLING_RIGHT, ANIM_DELAY);
@@ -228,7 +228,7 @@ void Player::MoveX()
 	//We can only go up and down while climbing
 	if (state == State::CLIMBING)	return;
 
-	if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT))
+	if (IsKeyDown(KEY_A) && !IsKeyDown(KEY_D))
 	{
 		pos.x += -PLAYER_SPEED;
 		if (state == State::IDLE) StartWalkingLeft();
@@ -244,7 +244,7 @@ void Player::MoveX()
 			if (state == State::WALKING) Stop();
 		}
 	}
-	else if (IsKeyDown(KEY_RIGHT))
+	else if (IsKeyDown(KEY_D))
 	{
 		pos.x += PLAYER_SPEED;
 		if (state == State::IDLE) StartWalkingRight();
@@ -285,13 +285,13 @@ void Player::MoveY()
 		{
 			if (state == State::FALLING) Stop();
 
-			if (IsKeyDown(KEY_UP))
+			if (IsKeyDown(KEY_DOWN))
 			{
 				box = GetHitbox();
 				if (map->TestOnLadder(box, &pos.x))
 					StartClimbingUp();
 			}
-			else if (IsKeyDown(KEY_DOWN))
+			else if (IsKeyDown(KEY_S))
 			{
 				//To climb up the ladder, we need to check the control point (x, y)
 				//To climb down the ladder, we need to check pixel below (x, y+1) instead
@@ -304,7 +304,7 @@ void Player::MoveY()
 				}
 					
 			}
-			else if (IsKeyPressed(KEY_SPACE))
+			else if (IsKeyPressed(KEY_W))
 			{
 				StartJumping();
 			}
@@ -378,12 +378,12 @@ void Player::LogicClimbing()
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	int tmp;
 
-	if (IsKeyDown(KEY_UP))
+	if (IsKeyDown(KEY_DOWN))
 	{
 		pos.y -= PLAYER_LADDER_SPEED;
 		sprite->NextFrame();
 	}
-	else if (IsKeyDown(KEY_DOWN))
+	else if (IsKeyDown(KEY_S))
 	{
 		pos.y += PLAYER_LADDER_SPEED;
 		sprite->PrevFrame();

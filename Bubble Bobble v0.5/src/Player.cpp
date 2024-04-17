@@ -219,6 +219,8 @@ void Player::Update()
 
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	sprite->Update();
+
+	Teleport();
 }
 void Player::MoveX()
 {

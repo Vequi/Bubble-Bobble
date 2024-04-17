@@ -3,7 +3,7 @@
 #include "ResourceManager.h"
 #include <stdio.h>
 
-Music* levelMusic = nullptr;
+Sound music[10];
 
 Game::Game()
 {
@@ -12,6 +12,11 @@ Game::Game()
     img_menu = nullptr;
     img_insertcoin = nullptr;
     img_player_selc = nullptr;
+    img_lvl1=nullptr;
+    img_lvl6=nullptr;
+    img_lvl34=nullptr;
+    img_lvl46=nullptr;
+    img_lvl100=nullptr;
 
 
     target = {};
@@ -45,22 +50,9 @@ AppStatus Game::Initialise(float scale)
     SetWindowIcon(customIcon);
     UnloadImage(customIcon);
 
-    levelMusic = new Music;
-    *levelMusic = LoadMusicStream("BubbleBobble_Audio&SFX/Music_OGG/MainTheme_Music.ogg");
-    if (levelMusic == nullptr)
-    {
-        LOG("Failed to load music");
-        CloseWindow(); // Close the window if loading the music fails
-        return AppStatus::ERROR;
-    }
-
-    // Set the music volume 
-    SetMusicVolume(*levelMusic, 0.1f); // Set volume to 50%
-
-    // Play level music
-    PlayMusicStream(*levelMusic);
-
-
+    music[0] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/TitleSFX.wav");
+    PlaySound(music[0]);
+    SetSoundVolume(music[0], 0.1f);
     //Render texture initialisation, used to hold the rendering result so we can easily resize it
     target = LoadRenderTexture(WINDOW_WIDTH, WINDOW_HEIGHT);
     if (target.id == 0)
@@ -108,11 +100,45 @@ AppStatus Game::LoadResources()
     }
     img_player_selc = data.GetTexture(Resource::IMG_PLAYER_SELC);
 
+//lvl1-100
+    if (data.LoadTexture(Resource::IMG_LVL1, "BubbleBobble_Art/Levels/level1.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_lvl1 = data.GetTexture(Resource::IMG_LVL1);
+
+    if (data.LoadTexture(Resource::IMG_LVL6, "BubbleBobble_Art/Levels/level6.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_lvl6 = data.GetTexture(Resource::IMG_LVL6);
+
+    if (data.LoadTexture(Resource::IMG_LVL34, "BubbleBobble_Art/Levels/level34.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_lvl34 = data.GetTexture(Resource::IMG_LVL34);
+
+    if (data.LoadTexture(Resource::IMG_LVL46, "BubbleBobble_Art/Levels/level46.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_lvl46 = data.GetTexture(Resource::IMG_LVL46);
+
+    if (data.LoadTexture(Resource::IMG_LVL100, "BubbleBobble_Art/UI/SelectPlayerScreenBB.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_lvl100 = data.GetTexture(Resource::IMG_LVL100);
+
     return AppStatus::OK;
 }
 AppStatus Game::BeginPlay()
 {
     scene = new Scene();
+    music[1] = LoadSound("BubbleBobble_Audio&SFX/Music_OGG/MainTheme_Music.ogg");
+    PlaySound(music[1]);
+    SetSoundVolume(music[1], 0.1f);
     if (scene == nullptr)
     {
         LOG("Failed to allocate memory for Scene");
@@ -123,7 +149,6 @@ AppStatus Game::BeginPlay()
         LOG("Failed to initialise Scene");
         return AppStatus::ERROR;
     }
-
     return AppStatus::OK;
 }
 void Game::FinishPlay()
@@ -136,12 +161,6 @@ AppStatus Game::Update()
 {
     //Check if user attempts to close the window, either by clicking the close button or by pressing Alt+F4
     if (WindowShouldClose()) return AppStatus::QUIT;
-
-    float timePlayed = 0.0f;
-    UpdateMusicStream(*levelMusic);
-    timePlayed = GetMusicTimePlayed(*levelMusic) / GetMusicTimeLength(*levelMusic);
-
-    if (timePlayed > 1.0f) timePlayed = 1.0f;   // Make sure time played is no longer than music
 
     switch (state)
     {
@@ -182,7 +201,22 @@ AppStatus Game::Update()
             scene->Update();
         }
         break;
-    }
+    case GameState::SCROLL:
+        if (IsKeyPressed(KEY_ESCAPE))
+        {
+            FinishPlay();
+            state = GameState::MAIN_MENU;
+        } 
+        else if (IsKeyPressed(KEY_E)) {
+            state = GameState::SCROLL;
+        }
+        else
+        {
+            //Game logic
+            scene->Update();
+        }
+        break;
+	}
     return AppStatus::OK;
 }
 void Game::Render()
@@ -205,6 +239,29 @@ void Game::Render()
     case GameState::PLAYING:
         scene->Render();
         break;
+    case GameState::SCROLL:
+        float scroll=time_elapsed/total_time;
+        float ypos2=WINDOW_HEIGHT*-scroll;
+        if(time_elapsed<total_time)
+        {
+            DrawTexture(*img_lvl1, 0, ypos2, WHITE);
+            DrawTexture(*img_lvl6, 0, ypos2+WINDOW_HEIGHT, WHITE);
+            DrawTexture(*img_lvl34, 0, ypos2+WINDOW_HEIGHT, WHITE);
+            DrawTexture(*img_lvl46, 0, ypos2+WINDOW_HEIGHT, WHITE);
+            DrawTexture(*img_lvl100, 0, ypos2+WINDOW_HEIGHT, WHITE);
+
+            time_elapsed+=GetFrameTime();
+
+        }
+        else
+		{
+            time_elapsed=0.0f;
+			state=GameState::PLAYING;
+            scene->LoadLevel(2);
+		}
+    
+        break;
+    
     }
 
     EndTextureMode();
@@ -217,7 +274,7 @@ void Game::Render()
 void Game::Cleanup()
 {
     UnloadResources();
-    UnloadMusicStream(*levelMusic);
+    CloseAudioDevice();
     CloseWindow();
 }
 void Game::UnloadResources()
@@ -226,6 +283,11 @@ void Game::UnloadResources()
     data.ReleaseTexture(Resource::IMG_MENU);
     data.ReleaseTexture(Resource::IMG_INSERTCOIN);
     data.ReleaseTexture(Resource::IMG_PLAYER_SELC);
+    data.ReleaseTexture(Resource::IMG_LVL1);
+    data.ReleaseTexture(Resource::IMG_LVL6);
+    data.ReleaseTexture(Resource::IMG_LVL34);
+    data.ReleaseTexture(Resource::IMG_LVL46);
+    data.ReleaseTexture(Resource::IMG_LVL100);
 
     UnloadRenderTexture(target);
 }

@@ -42,20 +42,20 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::L1SHADE_CORNERB] = { 4*n, 13*n, n, n };
 	dict_rect[(int)Tile::L1SHADE_3D] = { 2*n, 5*n, n, n };	
 	
-	dict_rect[(int)Tile::L6BLOCKTL] = { 0, 30*n, n, n };
-	dict_rect[(int)Tile::L6BLOCKTR] = { n, 30*n, n, n };
-	dict_rect[(int)Tile::L6BLOCKBL] = { 0, 31*n, n, n };
-	dict_rect[(int)Tile::L6BLOCKBR] = { n, 31*n, n, n };
-	dict_rect[(int)Tile::L6BLOCK_NUMT] = { n, 28*n, n, n};
-	dict_rect[(int)Tile::L6BLOCK_NUMB] = { n, 29*n, n, n };
-	dict_rect[(int)Tile::L6BLOCK_ALT] = { 2*n, 28*n, n, n };
+	dict_rect[(int)Tile::L6BLOCKTL] = { 0, 36*n, n, n };
+	dict_rect[(int)Tile::L6BLOCKTR] = { n, 36*n, n, n };
+	dict_rect[(int)Tile::L6BLOCKBL] = { 0, 37*n, n, n };
+	dict_rect[(int)Tile::L6BLOCKBR] = { n, 37*n, n, n };
+	dict_rect[(int)Tile::L6BLOCK_NUMT] = { n, 34*n, n, n};
+	dict_rect[(int)Tile::L6BLOCK_NUMB] = { n, 35*n, n, n };
+	dict_rect[(int)Tile::L6BLOCK_ALT] = { 2*n, 34*n, n, n };
 						  
-	dict_rect[(int)Tile::L6SHADE_RIGHT] = { 26*n, 38*n, n, n };
-	dict_rect[(int)Tile::L6SHADE_CORNER] = { 2*n, 29*n, n, n };
-	dict_rect[(int)Tile::L6SHADE_B] = { 3*n, 29*n, n, n };
-	dict_rect[(int)Tile::L6SHADE_BD] = { 13*n, 29*n, n, n };
-	dict_rect[(int)Tile::L6SHADE_CORNERB] = { 9*n, 29*n, n, n };
-	dict_rect[(int)Tile::L6SHADE_3D] = { 2*n, 30*n, n, n };	
+	dict_rect[(int)Tile::L6SHADE_RIGHT] = { 26*n, 44*n, n, n };
+	dict_rect[(int)Tile::L6SHADE_CORNER] = { 2*n, 35*n, n, n };
+	dict_rect[(int)Tile::L6SHADE_B] = { 3*n, 35*n, n, n };
+	dict_rect[(int)Tile::L6SHADE_BD] = { 13*n, 35*n, n, n };
+	dict_rect[(int)Tile::L6SHADE_CORNERB] = { 9*n, 35*n, n, n };
+	dict_rect[(int)Tile::L6SHADE_3D] = { 2*n, 38*n, n, n };	
 	
 	dict_rect[(int)Tile::L34BLOCK] = { 0, 82*n, n, n };
 	dict_rect[(int)Tile::L34BLOCK_NUMT1] = { 0, 80*n, n, n};

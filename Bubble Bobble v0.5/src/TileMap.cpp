@@ -10,6 +10,7 @@ TileMap::TileMap()
 	height = 0;
 	laser = nullptr;
 	img_tiles = nullptr;
+	img_objects = nullptr;
 
 	InitTileDictionary();
 }
@@ -141,6 +142,12 @@ AppStatus TileMap::Initialise()
 		return AppStatus::ERROR;
 	}
 	img_tiles = data.GetTexture(Resource::IMG_TILES);
+
+	if (data.LoadTexture(Resource::IMG_OBJECTS, "BubbleBobble_Art/Bubbles&Items/items.png") != AppStatus::OK)
+	{
+		return AppStatus::ERROR;
+	}
+	img_objects = data.GetTexture(Resource::IMG_OBJECTS);
 
 	laser = new Sprite(img_tiles);
 	if (laser == nullptr)

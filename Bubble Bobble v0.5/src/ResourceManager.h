@@ -17,7 +17,8 @@ enum class Resource {
     IMG_PLAYER, 
     IMG_PLAYER2,
     IMG_TILES,
-    IMG_ITEMS
+    IMG_OBJECTS,
+    IMG_POWERUPS
 };
 
 class ResourceManager {

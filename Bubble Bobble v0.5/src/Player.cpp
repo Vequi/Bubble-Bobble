@@ -5,6 +5,8 @@
 #include "Globals.h"
 #include <raymath.h>
 
+Sound playerSound[10];
+
 Player::Player(const Point& p, State s, Look view) :
 	Entity(p, PLAYER_PHYSICAL_WIDTH, PLAYER_PHYSICAL_HEIGHT, PLAYER_FRAME_SIZE, PLAYER_FRAME_SIZE)
 {
@@ -168,6 +170,9 @@ void Player::StartFalling()
 }
 void Player::StartJumping()
 {
+	playerSound[0] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/JumpSFX.wav");
+	PlaySound(playerSound[0]);
+	SetSoundVolume(playerSound[0], 0.1f);
 	dir.y = -PLAYER_JUMP_FORCE;
 	state = State::JUMPING;
 	if (IsLookingRight())	SetAnimation((int)PlayerAnim::JUMPING_RIGHT);

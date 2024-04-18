@@ -20,9 +20,10 @@ void log(const char file[], int line, const char* text, ...);
 
 //Game constants
 #define MARGIN_GUI_Y	16
+#define OBJECT_TILE_SIZE	16
 #define TILE_SIZE		8
 #define LEVEL_WIDTH		32
 #define LEVEL_HEIGHT	28
 
 //Entities animation delay
-#define ANIM_DELAY		6
+#define ANIM_DELAY		8

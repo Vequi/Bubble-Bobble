@@ -50,6 +50,8 @@ AppStatus Scene::Init()
 		return AppStatus::ERROR;
 	}
 
+
+
 	//Create level 
     level = new TileMap();
     if (level == nullptr)
@@ -302,7 +304,12 @@ void Scene::RenderObjectsDebug(const Color& col) const
 }
 void Scene::RenderGUI() const
 {
+	//Font initialisation
+	//const char msg[256] = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHI\nJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmn\nopqrstuvwxyz{|}~¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓ\nÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷\nøùúûüýþÿ";
+	//Font bbfont = LoadFontEx("BubbleBobble_Art/UI/bbfont.ttf", 10, 0, 200);
+	//SetTextLineSpacing(7.0f);
 	//Temporal approach
 	const int n = TILE_SIZE;
-	DrawText(TextFormat("1UP : %d", player->GetScore()), 2*n, 0, 1, GREEN);
+	DrawText(TextFormat("1UP : %d", player->GetScore()), 2 * n, 0, 1, GREEN);
+	//DrawTextEx(bbfont, TextFormat("1UP\n%d", player->GetScore()), {4*n, 0}, 10, 1, GREEN);
 }

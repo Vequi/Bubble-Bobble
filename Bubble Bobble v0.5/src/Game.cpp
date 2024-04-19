@@ -53,6 +53,7 @@ AppStatus Game::Initialise(float scale)
     music[0] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/TitleSFX.wav");
     PlaySound(music[0]);
     SetSoundVolume(music[0], 0.1f);
+
     //Render texture initialisation, used to hold the rendering result so we can easily resize it
     target = LoadRenderTexture(WINDOW_WIDTH, WINDOW_HEIGHT);
     if (target.id == 0)

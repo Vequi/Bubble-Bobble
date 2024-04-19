@@ -15,6 +15,7 @@ Player::Player(const Point& p, State s, Look view) :
 	jump_delay = PLAYER_JUMP_DELAY;
 	map = nullptr;
 	score = 0;
+	high_score = 0;
 }
 Player::~Player()
 {
@@ -99,6 +100,19 @@ void Player::IncrScore(int n)
 int Player::GetScore()
 {
 	return score;
+}
+void Player::InitHScore()
+{
+	high_score = 0;
+}
+void Player::UpdateHScore(int score)
+{
+	if (score > high_score)
+		high_score = score;
+}
+int Player::GetHScore()
+{
+	return high_score;
 }
 void Player::SetTileMap(TileMap* tilemap)
 {

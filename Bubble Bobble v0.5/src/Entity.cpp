@@ -52,7 +52,7 @@ void Entity::Teleport()
 {
 	if (pos.y > WINDOW_HEIGHT) 
 	{
-		pos.y = -TILE_SIZE;
+		pos.y = -TILE_SIZE+MARGIN_GUI_Y;
 	}
 }
 void Entity::DrawHitbox(const Color& col) const

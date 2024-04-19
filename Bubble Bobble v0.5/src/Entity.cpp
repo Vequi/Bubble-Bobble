@@ -48,6 +48,13 @@ void Entity::DrawTint(const Color& col) const
 	Point p = GetRenderingPosition();
 	render->DrawTint(p.x, p.y, col);
 }
+void Entity::Teleport() 
+{
+	if (pos.y > WINDOW_HEIGHT) 
+	{
+		pos.y = -TILE_SIZE+MARGIN_GUI_Y;
+	}
+}
 void Entity::DrawHitbox(const Color& col) const
 {
 	Color c = col;

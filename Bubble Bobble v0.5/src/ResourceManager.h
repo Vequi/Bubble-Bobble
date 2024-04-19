@@ -7,10 +7,18 @@
 
 enum class Resource {
     IMG_MENU,
+    IMG_INSERTCOIN,
+    IMG_PLAYER_SELC,
+    IMG_LVL1,
+    IMG_LVL6,
+    IMG_LVL34,
+    IMG_LVL46,
+    IMG_LVL100,
     IMG_PLAYER, 
     IMG_PLAYER2,
     IMG_TILES,
-    IMG_ITEMS
+    IMG_OBJECTS,
+    IMG_POWERUPS
 };
 
 class ResourceManager {

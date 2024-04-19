@@ -10,6 +10,7 @@ TileMap::TileMap()
 	height = 0;
 	laser = nullptr;
 	img_tiles = nullptr;
+	img_objects = nullptr;
 
 	InitTileDictionary();
 }
@@ -31,16 +32,71 @@ void TileMap::InitTileDictionary()
 {
 	const int n = TILE_SIZE;
 
-	dict_rect[(int)Tile::L1BLOCK] = { 0, 0, n, n };
-	dict_rect[(int)Tile::L1BLOCK_NUMT] = { n, 0, n, n};
-	dict_rect[(int)Tile::L1BLOCK_NUMB] = { 2*n, 0, n, n };
+	dict_rect[(int)Tile::L1BLOCK] = { 0, 2*n, n, n };
+	dict_rect[(int)Tile::L1BLOCK_NUMT] = { n, 2*n, n, n};
+	dict_rect[(int)Tile::L1BLOCK_NUMB] = { n, 3*n, n, n };
 
-	dict_rect[(int)Tile::L1SHADE_RIGHT] = { 3*n, 0, n, n };
-	dict_rect[(int)Tile::L1SHADE_CORNER] = { 0, n, n, n };
-	dict_rect[(int)Tile::L1SHADE_B] = { n, n, n, n };
-	dict_rect[(int)Tile::L1SHADE_BD] = { 2*n, n, n, n };
-	dict_rect[(int)Tile::L1SHADE_CORNERB] = { 3*n, n, n, n };
-	dict_rect[(int)Tile::L1SHADE_3D] = { 0, 2*n, n, n };
+	dict_rect[(int)Tile::L1SHADE_RIGHT] = { 4*n, 12*n, n, n };
+	dict_rect[(int)Tile::L1SHADE_CORNER] = { 2*n, 3*n, n, n };
+	dict_rect[(int)Tile::L1SHADE_B] = { 3*n, 13*n, n, n };
+	dict_rect[(int)Tile::L1SHADE_BD] = { 7*n, 13*n, n, n };
+	dict_rect[(int)Tile::L1SHADE_CORNERB] = { 4*n, 13*n, n, n };
+	dict_rect[(int)Tile::L1SHADE_3D] = { 2*n, 5*n, n, n };	
+	
+	dict_rect[(int)Tile::L6BLOCKTL] = { 0, 36*n, n, n };
+	dict_rect[(int)Tile::L6BLOCKTR] = { n, 36*n, n, n };
+	dict_rect[(int)Tile::L6BLOCKBL] = { 0, 37*n, n, n };
+	dict_rect[(int)Tile::L6BLOCKBR] = { n, 37*n, n, n };
+	dict_rect[(int)Tile::L6BLOCK_NUMT] = { n, 34*n, n, n};
+	dict_rect[(int)Tile::L6BLOCK_NUMB] = { n, 35*n, n, n };
+	dict_rect[(int)Tile::L6BLOCK_ALT] = { 2*n, 34*n, n, n };
+						  
+	dict_rect[(int)Tile::L6SHADE_RIGHT] = { 26*n, 44*n, n, n };
+	dict_rect[(int)Tile::L6SHADE_CORNER] = { 2*n, 35*n, n, n };
+	dict_rect[(int)Tile::L6SHADE_B] = { 3*n, 35*n, n, n };
+	dict_rect[(int)Tile::L6SHADE_BD] = { 13*n, 35*n, n, n };
+	dict_rect[(int)Tile::L6SHADE_CORNERB] = { 9*n, 35*n, n, n };
+	dict_rect[(int)Tile::L6SHADE_3D] = { 2*n, 38*n, n, n };	
+	
+	dict_rect[(int)Tile::L34BLOCK] = { 0, 82*n, n, n };
+	dict_rect[(int)Tile::L34BLOCK_NUMT1] = { 0, 80*n, n, n};
+	dict_rect[(int)Tile::L34BLOCK_NUMT2] = { n, 80*n, n, n };	
+	dict_rect[(int)Tile::L34BLOCK_NUMB1] = { 0, 81*n, n, n};
+	dict_rect[(int)Tile::L34BLOCK_NUMB2] = { n, 81*n, n, n };
+
+	dict_rect[(int)Tile::L34SHADE_RIGHT] = { 6*n, 59*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_CORNER] = { 2*n, 55*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_B] = { 5*n, 60*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_BD] = { 4*n, 60*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_CORNERB] = { 6*n, 60*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_3D] = { 2*n, 56*n, n, n };	
+	
+	dict_rect[(int)Tile::L46BLOCK] = { 0, 82 * n, n, n };
+	dict_rect[(int)Tile::L46BLOCK_NUMT1] = { 0, 80 * n, n, n };
+	dict_rect[(int)Tile::L46BLOCK_NUMT2] = { n, 81 * n, n, n };
+	dict_rect[(int)Tile::L46BLOCK_NUMB1] = { 0, 80 * n, n, n };
+	dict_rect[(int)Tile::L46BLOCK_NUMB2] = { n, 81 * n, n, n };
+						  
+	dict_rect[(int)Tile::L46SHADE_RIGHT] = { 10 * n, 95 * n, n, n };
+	dict_rect[(int)Tile::L46SHADE_CORNER] = { 2 * n, 86 * n, n, n };
+	dict_rect[(int)Tile::L46SHADE_B] = { 7 * n, 96 * n, n, n };
+	dict_rect[(int)Tile::L46SHADE_BD] = { 6 * n, 96 * n, n, n };
+	dict_rect[(int)Tile::L46SHADE_CORNERB] = { 10 * n, 96 * n, n, n };
+	dict_rect[(int)Tile::L46SHADE_3D] = { 2 * n, 87 * n, n, n };	
+	
+	dict_rect[(int)Tile::L100BLOCK] = { 0, 108 * n, n, n };
+	dict_rect[(int)Tile::L100BLOCK_NUMT1] = { 0, 106 * n, n, n };
+	dict_rect[(int)Tile::L100BLOCK_NUMT2] = { n, 106 * n, n, n };
+	dict_rect[(int)Tile::L100BLOCK_NUMB1] = { 0, 107 * n, n, n };
+	dict_rect[(int)Tile::L100BLOCK_NUMB2] = { n, 107 * n, n, n };
+						  
+	dict_rect[(int)Tile::L100SHADE_RIGHT] = { 11 * n, 111 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_CORNER] = { 2 * n, 107 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_B] = { 10 * n, 112 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_BD] = { 9 * n, 112 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_CORNERB] = { 11 * n, 112 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_3D] = { 2 * n, 108 * n, n, n };
+	
 
 	dict_rect[(int)Tile::BLOCK_SQUARE1_TL] = { 0,  0, n, n };
 	dict_rect[(int)Tile::BLOCK_SQUARE1_TR] = { n,  0, n, n };
@@ -81,11 +137,17 @@ AppStatus TileMap::Initialise()
 {
 	ResourceManager& data = ResourceManager::Instance();
 
-	if (data.LoadTexture(Resource::IMG_TILES, "BubbleBobble_Art/Levels/SpriteLevel1.png") != AppStatus::OK)
+	if (data.LoadTexture(Resource::IMG_TILES, "BubbleBobble_Art/Levels/VerticalLevels.png") != AppStatus::OK)
 	{
 		return AppStatus::ERROR;
 	}
 	img_tiles = data.GetTexture(Resource::IMG_TILES);
+
+	if (data.LoadTexture(Resource::IMG_OBJECTS, "BubbleBobble_Art/Bubbles&Items/items.png") != AppStatus::OK)
+	{
+		return AppStatus::ERROR;
+	}
+	img_objects = data.GetTexture(Resource::IMG_OBJECTS);
 
 	laser = new Sprite(img_tiles);
 	if (laser == nullptr)

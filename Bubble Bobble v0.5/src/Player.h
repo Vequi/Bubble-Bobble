@@ -59,6 +59,9 @@ public:
 	void InitScore();
 	void IncrScore(int n);
 	int GetScore();
+	void InitHScore();
+	void UpdateHScore(int score);
+	int GetHScore();
 
 	void Update();
 	void DrawDebug(const Color& col) const;
@@ -103,5 +106,6 @@ private:
 	TileMap *map;
 
 	int score;
+	int high_score;
 };
 

@@ -5,6 +5,8 @@
 #include "Globals.h"
 #include <raymath.h>
 
+Sound playerSound[10];
+
 Player::Player(const Point& p, State s, Look view) :
 	Entity(p, PLAYER_PHYSICAL_WIDTH, PLAYER_PHYSICAL_HEIGHT, PLAYER_FRAME_SIZE, PLAYER_FRAME_SIZE)
 {
@@ -13,6 +15,7 @@ Player::Player(const Point& p, State s, Look view) :
 	jump_delay = PLAYER_JUMP_DELAY;
 	map = nullptr;
 	score = 0;
+	high_score = 0;
 }
 Player::~Player()
 {
@@ -46,12 +49,12 @@ AppStatus Player::Initialise()
 	sprite->AddKeyFrame((int)PlayerAnim::IDLE_LEFT, { 0 * n, 0 * n, n, n });
 	sprite->AddKeyFrame((int)PlayerAnim::IDLE_LEFT, { 2 * n, 0 * n, n, n });
 
-	sprite->SetAnimationDelay((int)PlayerAnim::WALKING_RIGHT, 5);
-	for (i = 0; i < 5; ++i)
+	sprite->SetAnimationDelay((int)PlayerAnim::WALKING_RIGHT, ANIM_DELAY);
+	for (i = 1; i < 5; ++i)
 		sprite->AddKeyFrame((int)PlayerAnim::WALKING_RIGHT, { (float)i*n, 0*n, -n, n});
 
-	sprite->SetAnimationDelay((int)PlayerAnim::WALKING_LEFT, 5);
-	for (i = 0; i < 5; ++i)
+	sprite->SetAnimationDelay((int)PlayerAnim::WALKING_LEFT, ANIM_DELAY);
+	for (i = 1; i < 5; ++i)
 		sprite->AddKeyFrame((int)PlayerAnim::WALKING_LEFT, { (float)i*n, 0*n, n, n });
 
 	sprite->SetAnimationDelay((int)PlayerAnim::FALLING_RIGHT, ANIM_DELAY);
@@ -97,6 +100,19 @@ void Player::IncrScore(int n)
 int Player::GetScore()
 {
 	return score;
+}
+void Player::InitHScore()
+{
+	high_score = 0;
+}
+void Player::UpdateHScore(int score)
+{
+	if (score > high_score)
+		high_score = score;
+}
+int Player::GetHScore()
+{
+	return high_score;
 }
 void Player::SetTileMap(TileMap* tilemap)
 {
@@ -168,6 +184,9 @@ void Player::StartFalling()
 }
 void Player::StartJumping()
 {
+	playerSound[0] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/JumpSFX.wav");
+	PlaySound(playerSound[0]);
+	SetSoundVolume(playerSound[0], 0.1f);
 	dir.y = -PLAYER_JUMP_FORCE;
 	state = State::JUMPING;
 	if (IsLookingRight())	SetAnimation((int)PlayerAnim::JUMPING_RIGHT);
@@ -219,6 +238,8 @@ void Player::Update()
 
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	sprite->Update();
+
+	Teleport();
 }
 void Player::MoveX()
 {
@@ -228,7 +249,7 @@ void Player::MoveX()
 	//We can only go up and down while climbing
 	if (state == State::CLIMBING)	return;
 
-	if (IsKeyDown(KEY_LEFT) && !IsKeyDown(KEY_RIGHT))
+	if (IsKeyDown(KEY_A) && !IsKeyDown(KEY_D))
 	{
 		pos.x += -PLAYER_SPEED;
 		if (state == State::IDLE) StartWalkingLeft();
@@ -244,7 +265,7 @@ void Player::MoveX()
 			if (state == State::WALKING) Stop();
 		}
 	}
-	else if (IsKeyDown(KEY_RIGHT))
+	else if (IsKeyDown(KEY_D))
 	{
 		pos.x += PLAYER_SPEED;
 		if (state == State::IDLE) StartWalkingRight();
@@ -285,13 +306,13 @@ void Player::MoveY()
 		{
 			if (state == State::FALLING) Stop();
 
-			if (IsKeyDown(KEY_UP))
+			if (IsKeyDown(KEY_DOWN))
 			{
 				box = GetHitbox();
 				if (map->TestOnLadder(box, &pos.x))
 					StartClimbingUp();
 			}
-			else if (IsKeyDown(KEY_DOWN))
+			else if (IsKeyDown(KEY_S))
 			{
 				//To climb up the ladder, we need to check the control point (x, y)
 				//To climb down the ladder, we need to check pixel below (x, y+1) instead
@@ -304,7 +325,7 @@ void Player::MoveY()
 				}
 					
 			}
-			else if (IsKeyPressed(KEY_SPACE))
+			else if (IsKeyPressed(KEY_W))
 			{
 				StartJumping();
 			}
@@ -378,12 +399,12 @@ void Player::LogicClimbing()
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	int tmp;
 
-	if (IsKeyDown(KEY_UP))
+	if (IsKeyDown(KEY_DOWN))
 	{
 		pos.y -= PLAYER_LADDER_SPEED;
 		sprite->NextFrame();
 	}
-	else if (IsKeyDown(KEY_DOWN))
+	else if (IsKeyDown(KEY_S))
 	{
 		pos.y += PLAYER_LADDER_SPEED;
 		sprite->PrevFrame();

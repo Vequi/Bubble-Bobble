@@ -219,9 +219,6 @@ void Scene::Update()
 
 	level->Update();
 	player->Update();
-	if (objects.empty()) {
-		LoadLevel(2);
-	}
 	CheckCollisions();
 }
 void Scene::Render()

@@ -126,7 +126,7 @@ AppStatus Game::LoadResources()
     }
     img_lvl46 = data.GetTexture(Resource::IMG_LVL46);
 
-    if (data.LoadTexture(Resource::IMG_LVL100, "BubbleBobble_Art/UI/SelectPlayerScreenBB.png") != AppStatus::OK)
+    if (data.LoadTexture(Resource::IMG_LVL100, "BubbleBobble_Art/Levels/level100.png") != AppStatus::OK)
     {
         return AppStatus::ERROR;
     }
@@ -213,7 +213,6 @@ AppStatus Game::Update()
         }
         else
         {
-            //Game logic
             scene->Update();
         }
         break;
@@ -247,9 +246,6 @@ void Game::Render()
         {
             DrawTexture(*img_lvl1, 0, ypos2, WHITE);
             DrawTexture(*img_lvl6, 0, ypos2+WINDOW_HEIGHT, WHITE);
-            DrawTexture(*img_lvl34, 0, ypos2+WINDOW_HEIGHT, WHITE);
-            DrawTexture(*img_lvl46, 0, ypos2+WINDOW_HEIGHT, WHITE);
-            DrawTexture(*img_lvl100, 0, ypos2+WINDOW_HEIGHT, WHITE);
 
             time_elapsed+=GetFrameTime();
 

@@ -16,14 +16,14 @@ void log(const char file[], int line, const char* text, ...);
 
 //Window size
 #define WINDOW_WIDTH    256
-#define WINDOW_HEIGHT   240
+#define WINDOW_HEIGHT   224
 
 //Game constants
 #define MARGIN_GUI_Y	16
 #define OBJECT_TILE_SIZE	16
 #define TILE_SIZE		8
 #define LEVEL_WIDTH		32
-#define LEVEL_HEIGHT	28
+#define LEVEL_HEIGHT	26
 
 //Entities animation delay
 #define ANIM_DELAY		8

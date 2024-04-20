@@ -8,7 +8,10 @@ Sound music[10];
 Game::Game()
 {
     state = GameState::MAIN_MENU;
+    state = GameState::INITIAL1;
     scene = nullptr;
+    img_Initial1 = nullptr;
+    img_Initial2 = nullptr;
     img_menu = nullptr;
     img_insertcoin = nullptr;
     img_player_selc = nullptr;
@@ -17,6 +20,7 @@ Game::Game()
     img_lvl34=nullptr;
     img_lvl46=nullptr;
     img_lvl100=nullptr;
+    transitionTimer = 0.0f;
 
 
     target = {};
@@ -50,10 +54,6 @@ AppStatus Game::Initialise(float scale)
     SetWindowIcon(customIcon);
     UnloadImage(customIcon);
 
-    music[0] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/TitleSFX.wav");
-    PlaySound(music[0]);
-    SetSoundVolume(music[0], 0.1f);
-
     //Render texture initialisation, used to hold the rendering result so we can easily resize it
     target = LoadRenderTexture(WINDOW_WIDTH, WINDOW_HEIGHT);
     if (target.id == 0)
@@ -82,6 +82,18 @@ AppStatus Game::Initialise(float scale)
 AppStatus Game::LoadResources()
 {
     ResourceManager& data = ResourceManager::Instance();
+
+    if (data.LoadTexture(Resource::IMG_INITIAL1, "BubbleBobble_Art/UI/BBInitialScreen1.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_Initial1 = data.GetTexture(Resource::IMG_INITIAL1);
+
+    if (data.LoadTexture(Resource::IMG_INITIAL2, "BubbleBobble_Art/UI/BBInitialScreen2.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_Initial2 = data.GetTexture(Resource::IMG_INITIAL2);
 
     if (data.LoadTexture(Resource::IMG_MENU, "BubbleBobble_Art/UI/Title1.png") != AppStatus::OK)
     {
@@ -137,9 +149,7 @@ AppStatus Game::LoadResources()
 AppStatus Game::BeginPlay()
 {
     scene = new Scene();
-    music[1] = LoadSound("BubbleBobble_Audio&SFX/Music_OGG/MainTheme_Music.ogg");
-    PlaySound(music[1]);
-    SetSoundVolume(music[1], 0.1f);
+
     if (scene == nullptr)
     {
         LOG("Failed to allocate memory for Scene");
@@ -165,11 +175,41 @@ AppStatus Game::Update()
 
     switch (state)
     {
+    case GameState::INITIAL1:
+        if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
+        // Transition to INITIAL2 after 4 seconds
+        if (IsKeyPressed(KEY_SPACE))
+        {
+            if (BeginPlay() != AppStatus::OK) return AppStatus::ERROR;
+            state = GameState::MAIN_MENU;
+        }
+        transitionTimer += GetFrameTime();
+        if (transitionTimer >= 4.0f)
+        {
+            state = GameState::INITIAL2;
+            transitionTimer = 0.0f;
+        }
+    case GameState::INITIAL2:
+        if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
+        // Transition to MAIN_MENU after 4 seconds
+        transitionTimer += GetFrameTime();
+        if (transitionTimer >= 8.0f)
+        {
+            music[0] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/TitleSFX.wav");
+            PlaySound(music[0]);
+            SetSoundVolume(music[0], 0.1f);
+            state = GameState::MAIN_MENU;
+            transitionTimer = 0.0f;
+        }
+        break;
     case GameState::MAIN_MENU:
         if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
         if (IsKeyPressed(KEY_SPACE))
         {
             if (BeginPlay() != AppStatus::OK) return AppStatus::ERROR;
+            music[1] = LoadSound("BubbleBobble_Audio&SFX/Music_OGG/MainTheme_Music.ogg");
+            PlaySound(music[1]);
+            SetSoundVolume(music[1], 0.1f);
             state = GameState::INSERT_COIN;
 
         }
@@ -227,6 +267,17 @@ void Game::Render()
 
     switch (state)
     {
+    case GameState::INITIAL1:
+        DrawTexture(*img_Initial1, 0, 0, WHITE);
+        break;
+    case GameState::INITIAL2:
+    {
+        // Realizar una transición suave entre las imágenes
+        float alpha = transitionTimer / 4.0f;
+        DrawTextureEx(*img_Initial1, { 0, 0 }, 0.0f, 1.0f, Fade(WHITE, 1.0f - alpha));
+        DrawTextureEx(*img_Initial2, { 0, 0 }, 0.0f, 1.0f, Fade(WHITE, alpha));
+    }
+    break;
     case GameState::MAIN_MENU:
         DrawTexture(*img_menu, 0, 0, WHITE);
         break;
@@ -285,6 +336,9 @@ void Game::UnloadResources()
     data.ReleaseTexture(Resource::IMG_LVL34);
     data.ReleaseTexture(Resource::IMG_LVL46);
     data.ReleaseTexture(Resource::IMG_LVL100);
+    data.ReleaseTexture(Resource::IMG_INITIAL1);
+    data.ReleaseTexture(Resource::IMG_INITIAL2);
+
 
     UnloadRenderTexture(target);
 }

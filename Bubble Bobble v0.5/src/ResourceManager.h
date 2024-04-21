@@ -16,6 +16,7 @@ enum class Resource {
     IMG_LVL34,
     IMG_LVL46,
     IMG_LVL100,
+    IMG_SCORE,
     IMG_PLAYER, 
     IMG_PLAYER2,
     IMG_TILES,

@@ -105,13 +105,11 @@ void Player::InitHScore()
 {
 	high_score = 0;
 }
-void Player::UpdateHScore(int score)
-{
-	if (score > high_score)
-		high_score = score;
-}
 int Player::GetHScore()
 {
+	if (GetScore() >= high_score) {
+		high_score = GetScore();
+	}
 	return high_score;
 }
 void Player::SetTileMap(TileMap* tilemap)

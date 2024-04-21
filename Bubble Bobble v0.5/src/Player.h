@@ -60,7 +60,6 @@ public:
 	void IncrScore(int n);
 	int GetScore();
 	void InitHScore();
-	void UpdateHScore(int score);
 	int GetHScore();
 
 	void Update();

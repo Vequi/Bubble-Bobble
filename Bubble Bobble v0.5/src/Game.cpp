@@ -306,10 +306,10 @@ void Game::Render()
         break;
     case GameState::SCROLL:
         float progress = time_elapsed / total_time;
-        float yPos_stage2 = 224.0f * -progress;
+        float yPos_lvl6 = WINDOW_HEIGHT * -progress;
         if (time_elapsed < total_time) {
-            DrawTexture(*img_lvl1, 0, yPos_stage2, WHITE);
-            DrawTexture(*img_lvl6, 0, yPos_stage2 + 224, WHITE);
+            DrawTexture(*img_lvl1, 0, yPos_lvl6, WHITE);
+            DrawTexture(*img_lvl6, 0, yPos_lvl6 + WINDOW_HEIGHT, WHITE);
             RenderScore();
             time_elapsed += GetFrameTime();
 

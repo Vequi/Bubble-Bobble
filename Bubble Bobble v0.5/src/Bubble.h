@@ -9,23 +9,32 @@
 #define BUBBLE_SPEED 1.0f
 #define BUBBLE_FORCE 10
 
+#define BUBBLE_DELAY 2
 
 enum class BBState { SHOT, NORMAL};
 enum class BBDirection { GOING_L, GOING_R };
-enum class BBAnim { CAST, IDLE, RED_STATIC, RED_BLINK, POP, NUM_ANIMATIONS };
+
+enum class BBAnim { 
+	CAST, 
+	IDLE, 
+	LIGHTRED_STATIC, 
+	RED_STATIC, 
+	RED_BLINK, 
+	POP, 
+	NUM_ANIMATIONS 
+};
+
+
 
 class Bubble : public Entity {
 public:
 	Bubble(const Point& p, BBDirection direction);
 	~Bubble();
-
 	AppStatus Initialise();
 	void SetTileMap(TileMap* tilemap);
-
 	void Update();
 	void DrawDebug(const Color& col) const;
 	void Release();
-
 	bool IsAlive() const;
 
 private:
@@ -38,11 +47,9 @@ private:
 	//Bubble destruction;
 	bool alive;
 	bool move;
-
-	//BubbleTimer
 	float bubbleTimer;
 
-	//Animations
+	//Animation management
 	void SetAnimation(int id);
 	BBAnim GetAnimation();
 
@@ -50,3 +57,6 @@ private:
 	BBState state;
 	BBDirection direction;
 	TileMap* map;
+
+	int bubble_delay;
+};

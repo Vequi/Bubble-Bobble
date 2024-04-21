@@ -40,6 +40,9 @@ Bubble Bobble v0.5: https://youtu.be/ze9YP9dbtJI
     * J -> Move to the left
     * L -> Move to the right
     * SPACE -> Bubble
+    
+## Debug Tools
+    * F1 -> Check hitboxes
 
 ## Changelist
     

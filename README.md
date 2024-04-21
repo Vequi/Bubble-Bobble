@@ -26,14 +26,15 @@ Bubble Bobble v0.5: https://youtu.be/ze9YP9dbtJI
 ## Game Controls
 ### Intro    
     * SPACE -> Skip Menus
-    * RIGHT_SHIFT -> Insert Coin (not implemented)   
+    * RIGHT_SHIFT -> Insert Coin (not implemented yet)   
 ### Player 1 (Keyboard)
+    * 1 -> Start (not implemented yet)
     * W -> Jump
     * A -> Move to the left
     * D -> Move to the right
     * LEFT_SHIFT -> Bubble
 
-### Player 2 (Not Implemented) (Keyboard)
+### Player 2 (Not Implemented yet) (Keyboard)
     * 2 -> Start
     * I -> Jump
     * J -> Move to the left

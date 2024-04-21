@@ -16,9 +16,15 @@ Player::Player(const Point& p, State s, Look view) :
 	map = nullptr;
 	score = 0;
 	high_score = 0;
+	timeBubble = 0;
 }
 Player::~Player()
 {
+	for (Bubble* bubl : bubbles)
+	{
+		delete bubl;
+	}
+	bubbles.clear();
 }
 AppStatus Player::Initialise()
 {
@@ -233,10 +239,22 @@ void Player::Update()
 	//Instead, uses an independent behaviour for each axis.
 	MoveX();
 	MoveY();
-
+	BubbleShot();
+	auto it = bubbles.begin();
+	while (it!=bubbles.end())
+	{
+		if ((*it)->IsAlive() == false) {
+			delete *it;
+			it = bubbles.erase(it);
+		}
+		else
+		{
+			(*it)->Update();
+			it++;
+		}
+	}
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	sprite->Update();
-
 	Teleport();
 }
 void Player::MoveX()
@@ -332,6 +350,28 @@ void Player::MoveY()
 		{
 			if (state != State::FALLING) StartFalling();
 		}
+	}
+}
+void Player::BubbleShot()
+{
+	timeBubble+=GetFrameTime();
+	if (IsKeyPressed(KEY_LEFT_SHIFT) && timeBubble >= 0.25f) {
+			playerSound[1] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/BubbleAtkSFX.wav");
+			PlaySound(playerSound[1]);
+			SetSoundVolume(playerSound[1], 0.1f);
+			if (IsLookingLeft()) {
+				Bubble* bubl = new Bubble({ pos.x-PLAYER_PHYSICAL_WIDTH, pos.y }, BBDirection::GOING_L);
+				bubl->Initialise();
+				bubl->SetTileMap(map);
+				bubbles.push_back(bubl);
+			}
+			else if (IsLookingRight()) {
+				Bubble* bubl = new Bubble({ pos.x + PLAYER_PHYSICAL_WIDTH, pos.y }, BBDirection::GOING_R);
+				bubl->Initialise();
+				bubl->SetTileMap(map);
+				bubbles.push_back(bubl);
+			}
+			timeBubble = 0;
 	}
 }
 void Player::LogicJumping()
@@ -443,10 +483,42 @@ void Player::DrawDebug(const Color& col) const
 	DrawText(TextFormat("Position: (%d,%d)\nSize: %dx%d\nFrame: %dx%d", pos.x, pos.y, width, height, frame_width, frame_height), 18*16, 0, 8, LIGHTGRAY);
 	DrawPixel(pos.x, pos.y, WHITE);
 }
+void Player::DrawBubble()
+{
+	auto it = bubbles.begin();
+	while(it!=bubbles.end())
+	{
+		(*it)->Draw();
+		it++;
+	}
+}
+void Player::DrawBubbleDebug(const Color& col) const
+{
+	auto it = bubbles.begin();
+	while (it != bubbles.end())
+	{
+		(*it)->DrawDebug(col);
+		it++;
+	}
+}
+void Player::ReleaseBubble()
+{
+	for(Bubble* bubl: bubbles)
+	{
+		delete bubl;
+	}
+	bubbles.clear();
+}
 void Player::Release()
 {
 	ResourceManager& data = ResourceManager::Instance();
 	data.ReleaseTexture(Resource::IMG_PLAYER);
 
 	render->Release();
+	
+	auto it = bubbles.begin();
+	while (it != bubbles.end()) {
+		(*it)->Release();
+		++it;
+	}
 }

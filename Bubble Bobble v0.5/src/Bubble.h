@@ -11,20 +11,25 @@
 
 #define BUBBLE_DELAY 2
 
-enum class BBState { SHOT, NORMAL};
+#define BUBBLE_DASHX 5
+#define BUBBLE_DASHY 1
+
+//Bubble Timers
+#define RED_TIME				7		
+#define BLINK_TIME				10
+#define POP_TIME				12
+
+enum class BBState { SHOT, STATIC, RED_POP, BLINK_POP};
 enum class BBDirection { GOING_L, GOING_R };
 
 enum class BBAnim { 
 	CAST, 
 	IDLE, 
 	LIGHTRED_STATIC, 
-	RED_STATIC, 
 	RED_BLINK, 
 	POP, 
 	NUM_ANIMATIONS 
 };
-
-
 
 class Bubble : public Entity {
 public:
@@ -42,11 +47,11 @@ private:
 	//Bubble Mechanics
 	void MoveX();
 	void MoveY();
-	void BubbleCounter();
+	void BubbleCnt();
 
 	//Bubble destruction;
 	bool alive;
-	bool move;
+	bool moving;
 	float bubbleTimer;
 
 	//Animation management

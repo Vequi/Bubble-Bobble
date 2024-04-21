@@ -31,6 +31,7 @@ private:
     
     TileMap *level;
     std::vector<Object*> objects;
+    std::vector<Bubble*> bubbleEnemies;
 
     Camera2D camera;
     DebugMode debug;

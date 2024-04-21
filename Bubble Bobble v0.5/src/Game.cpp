@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "Globals.h"
 #include "ResourceManager.h"
+#include "Player.h"
 #include <stdio.h>
 
 Sound music[10];
@@ -20,7 +21,9 @@ Game::Game()
     img_lvl34=nullptr;
     img_lvl46=nullptr;
     img_lvl100=nullptr;
+    img_scoreUI = nullptr;
     transitionTimer = 0.0f;
+
 
 
     target = {};
@@ -144,8 +147,22 @@ AppStatus Game::LoadResources()
     }
     img_lvl100 = data.GetTexture(Resource::IMG_LVL100);
 
+    if (data.LoadTexture(Resource::IMG_SCORE, "BubbleBobble_Art/UI/scoreUI.png") != AppStatus::OK)
+    {
+        return AppStatus::ERROR;
+    }
+    img_scoreUI = data.GetTexture(Resource::IMG_SCORE);
+
     return AppStatus::OK;
 }
+
+void Game::RenderScore()
+{
+    const int n = TILE_SIZE;
+    DrawTexture(*img_scoreUI, 0, -1, WHITE);
+
+}
+
 AppStatus Game::BeginPlay()
 {
     scene = new Scene();
@@ -203,6 +220,7 @@ AppStatus Game::Update()
         }
         break;
     case GameState::MAIN_MENU:
+      
         if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
         if (IsKeyPressed(KEY_SPACE))
         {
@@ -215,15 +233,16 @@ AppStatus Game::Update()
         }
         break;
     case GameState::INSERT_COIN:
-
+        
         if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
         if (IsKeyPressed(KEY_SPACE))
         {
+
             state = GameState::PLAYER_SELC;
         }
         break;
     case GameState::PLAYER_SELC:
-
+        
         if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
         if (IsKeyPressed(KEY_SPACE))
         {
@@ -231,31 +250,22 @@ AppStatus Game::Update()
         }
         break;
     case GameState::PLAYING:
+        
         if (IsKeyPressed(KEY_ESCAPE))
         {
             FinishPlay();
             state = GameState::MAIN_MENU;
         }
+       
+ 
+
         else
         {
             //Game logic
             scene->Update();
         }
         break;
-    case GameState::SCROLL:
-        if (IsKeyPressed(KEY_ESCAPE))
-        {
-            FinishPlay();
-            state = GameState::MAIN_MENU;
-        } 
-        else if (IsKeyPressed(KEY_E)) {
-            state = GameState::SCROLL;
-        }
-        else
-        {
-            scene->Update();
-        }
-        break;
+
 	}
     return AppStatus::OK;
 }
@@ -280,34 +290,36 @@ void Game::Render()
     break;
     case GameState::MAIN_MENU:
         DrawTexture(*img_menu, 0, 0, WHITE);
+        RenderScore();
         break;
     case GameState::INSERT_COIN:
         DrawTexture(*img_insertcoin, 0, 0, WHITE);
+        RenderScore();
         break;
     case GameState::PLAYER_SELC:
         DrawTexture(*img_player_selc, 0, 0, WHITE);
+        RenderScore();
         break;
     case GameState::PLAYING:
+        RenderScore();
         scene->Render();
         break;
     case GameState::SCROLL:
-        float scroll=time_elapsed/total_time;
-        float ypos2=WINDOW_HEIGHT*-scroll;
-        if(time_elapsed<total_time)
-        {
-            DrawTexture(*img_lvl1, 0, ypos2, WHITE);
-            DrawTexture(*img_lvl6, 0, ypos2+WINDOW_HEIGHT, WHITE);
-
-            time_elapsed+=GetFrameTime();
+        float progress = time_elapsed / total_time;
+        float yPos_stage2 = 224.0f * -progress;
+        if (time_elapsed < total_time) {
+            DrawTexture(*img_lvl1, 0, yPos_stage2, WHITE);
+            DrawTexture(*img_lvl6, 0, yPos_stage2 + 224, WHITE);
+            RenderScore();
+            time_elapsed += GetFrameTime();
 
         }
-        else
-		{
-            time_elapsed=0.0f;
-			state=GameState::PLAYING;
+        else {
+            RenderScore();
+            time_elapsed = 0;
+            state = GameState::PLAYING;
             scene->LoadLevel(2);
-		}
-    
+        }
         break;
     
     }
@@ -336,6 +348,7 @@ void Game::UnloadResources()
     data.ReleaseTexture(Resource::IMG_LVL34);
     data.ReleaseTexture(Resource::IMG_LVL46);
     data.ReleaseTexture(Resource::IMG_LVL100);
+    data.ReleaseTexture(Resource::IMG_SCORE);
     data.ReleaseTexture(Resource::IMG_INITIAL1);
     data.ReleaseTexture(Resource::IMG_INITIAL2);
 

@@ -19,6 +19,8 @@ private:
     AppStatus BeginPlay();
     void FinishPlay();
 
+    void RenderScore();
+
     AppStatus LoadResources();
     void UnloadResources();
 
@@ -34,11 +36,13 @@ private:
     const Texture2D* img_lvl34;
     const Texture2D* img_lvl46;
     const Texture2D* img_lvl100;
+    const Texture2D* img_scoreUI;
     float transitionTimer;
     int time=0;
     float timer=0;
     float total_time=2.0f;
     float time_elapsed=0.0f;
+
 
     //To work with original game units and then scale the result
     RenderTexture2D target;

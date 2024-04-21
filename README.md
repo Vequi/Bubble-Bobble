@@ -25,17 +25,15 @@ Bubble Bobble v0.5: https://youtu.be/ze9YP9dbtJI
 
 ## Game Controls
 ### Intro    
-    * SPACE -> Skip Menu
-    * RIGHT_SHIFT -> Insert Coins
-
+    * SPACE -> Skip Menus
+    * RIGHT_SHIFT -> Insert Coin (not implemented)   
 ### Player 1 (Keyboard)
-    * 1 -> Start
     * W -> Jump
     * A -> Move to the left
     * D -> Move to the right
     * LEFT_SHIFT -> Bubble
 
-### Player 2 (Keyboard)
+### Player 2 (Not Implemented) (Keyboard)
     * 2 -> Start
     * I -> Jump
     * J -> Move to the left
@@ -45,16 +43,27 @@ Bubble Bobble v0.5: https://youtu.be/ze9YP9dbtJI
 ## Changelist
     
 ### 0.5 Version (21/04/2024)
-    * Intro screen implemented
-    * Bubble Bobble intro screen
-    * Space to pass Intro screens
-    * Level 1 with collisions
-    * Level 2 with collisions
-    * Player movement W,A,D
-    * Bubble attack L_Shift
-    * Original music
-    * Effect sounds
-    * Teleport holes
-    * UI 
+    * Implemented Bubblun (Player 1)
+    * Added collisions to P1
+    * Added animations to P1
+    * Defined level size
+    * Designed initial screens
+    * Added Main Menu
+    * Added initial transition
+    * Set an icon for the .exe
+    * Set tiles for each level
+    * Added levels 1 & 6
+    * Defined levels 1 & 6 hitboxes
+    * Added items Cherry & Banana
+    * Implemented points to items
+    * Defined collisions to items
+    * Applied win condition for level 1
+    * Implemented warp/teleport for level 6
+    * Added sound effects and music
+    * Added UI + score
+    * Added bubbles of P1
+    * Defined bubbles physics + collisions
+    * Implemented bubbles animations
+    
     
     

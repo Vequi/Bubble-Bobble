@@ -1,6 +1,7 @@
 #pragma once
 #include "Entity.h"
 #include "TileMap.h"
+#include "Bubble.h"
 
 //Representation model size: 32x32
 #define PLAYER_FRAME_SIZE		16
@@ -25,7 +26,7 @@
 #define PLAYER_JUMP_DELAY		2
 
 //Player is levitating when abs(speed) <= this value
-#define PLAYER_LEVITATING_SPEED	2
+#define PLAYER_LEVITATING_SPEED	1
 
 //Gravity affects jumping velocity when jump_delay is 0
 #define GRAVITY_FORCE			1
@@ -60,11 +61,13 @@ public:
 	void IncrScore(int n);
 	int GetScore();
 	void InitHScore();
-	void UpdateHScore(int score);
 	int GetHScore();
 
 	void Update();
+	void DrawBubble();
+	void DrawBubbleDebug(const Color& col) const;
 	void DrawDebug(const Color& col) const;
+	void ReleaseBubble();
 	void Release();
 
 private:
@@ -76,6 +79,7 @@ private:
 	void MoveY();
 	void LogicJumping();
 	void LogicClimbing();
+	void BubbleShot();
 
 	//Animation management
 	void SetAnimation(int id);
@@ -102,6 +106,10 @@ private:
 	State state;
 	Look look;
 	int jump_delay;
+
+	std::vector<Bubble*> bubbles;
+	float timeBubble;
+	float shootTime;
 
 	TileMap *map;
 

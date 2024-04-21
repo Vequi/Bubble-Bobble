@@ -19,6 +19,7 @@ enum class Resource {
     IMG_SCORE,
     IMG_PLAYER, 
     IMG_PLAYER2,
+    IMG_BUBBLES,
     IMG_TILES,
     IMG_OBJECTS,
     IMG_POWERUPS

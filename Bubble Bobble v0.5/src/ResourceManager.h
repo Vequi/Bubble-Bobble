@@ -18,6 +18,7 @@ enum class Resource {
     IMG_LVL100,
     IMG_PLAYER, 
     IMG_PLAYER2,
+    IMG_ZENCHAN,
     IMG_TILES,
     IMG_OBJECTS,
     IMG_POWERUPS

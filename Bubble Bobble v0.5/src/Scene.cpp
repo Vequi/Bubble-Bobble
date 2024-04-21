@@ -33,6 +33,11 @@ Scene::~Scene()
 		delete obj;
 	}
 	objects.clear();
+	for (Enemy* enemy : enemies)
+	{
+		delete enemy;
+	}
+	enemies.clear();
 }
 AppStatus Scene::Init()
 {
@@ -84,7 +89,8 @@ AppStatus Scene::LoadLevel(int stage)
 	Tile tile;
 	Point pos;
 	int *map = nullptr;
-	Object *obj = nullptr;
+	Object *obj;
+	Enemy *enemy;
 	
 	ClearLevel();
 
@@ -101,8 +107,8 @@ AppStatus Scene::LoadLevel(int stage)
 			 1,   1,   31,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1, 
 			 1,   1,   31,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1, 
 			 1,   1,   31,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1, 
-			 1,   1,   31,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1, 
-			 1,   1,   31,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  62,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1, 
+			 1,   1,   31,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   101,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1, 
+			 1,   1,   31,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,  62,   101,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1, 
 			 1,   1,   1,    1,  26,   0,   0,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  26,   0,   0,   1,   1,   1,   1, 
 			 1,   1,   27,  28,  30,   0,   0,  29,  28,  28,  28,  28,  28,  28,  28,  28,  28,  28,  28,  28,  28,  28,  28,  28,  28,  30,   0,   0,  29,  28,   1,   1, 
 			 1,   1,   31,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   1, 
@@ -195,6 +201,16 @@ AppStatus Scene::LoadLevel(int stage)
 				objects.push_back(obj);
 				map[i] = 0;
 			}
+			else if (tile == Tile::ZENCHAN)
+			{
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				enemy = new Enemy(pos, EnemyState::WALKING, EnemyLook::RIGHT);
+				enemy->Initialise();
+				enemy->SetTileMap(level);
+				enemies.push_back(enemy);
+				map[i] = 0;
+			}
 			++i;
 		}
 	}
@@ -253,7 +269,7 @@ void Scene::Release()
 }
 void Scene::CheckCollisions()
 {
-	AABB player_box, obj_box;
+	AABB player_box, obj_box, enemy_box;
 	
 	player_box = player->GetHitbox();
 	auto it = objects.begin();
@@ -283,6 +299,11 @@ void Scene::ClearLevel()
 		delete obj;
 	}
 	objects.clear();
+	for (Enemy* enemy : enemies)
+	{
+		delete enemy;
+	}
+	enemies.clear();
 }
 void Scene::RenderObjects() const
 {
@@ -296,6 +317,20 @@ void Scene::RenderObjectsDebug(const Color& col) const
 	for (Object* obj : objects)
 	{
 		obj->DrawDebug(col);
+	}
+}
+void Scene::RenderEnemies()
+{
+	for (Enemy* enemy : enemies)
+	{
+		enemy->Draw();
+	}
+}
+void Scene::RenderEnemiesDebug(const Color& col) const
+{
+	for (Enemy* enemy : enemies)
+	{
+		enemy->DrawDebug(col);
 	}
 }
 void Scene::RenderGUI() const

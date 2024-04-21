@@ -56,7 +56,7 @@ enum class Tile {
 	LASER = 70, LASER_FRAME0, LASER_FRAME1, LASER_FRAME2,
 
 	// id >= 100: entities' initial locations
-	PLAYER = 100, PLAYER2,
+	PLAYER = 100, ZENCHAN,
 
 	//Intervals
 	STATIC_FIRST = L1BLOCK,
@@ -66,7 +66,7 @@ enum class Tile {
 	SPECIAL_FIRST = DOOR,
 	SPECIAL_LAST = LASER,
 	ENTITY_FIRST = PLAYER, 
-	ENTITY_LAST = PLAYER2
+	ENTITY_LAST = ZENCHAN
 };
 
 class TileMap

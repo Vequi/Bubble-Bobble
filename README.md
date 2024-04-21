@@ -19,6 +19,10 @@ If you want more information about the game, check out our wiki at the following
 ## Installation
 **_Unzip the release folder and execute the .exe file._**
 
+## 1 minute YT Video
+
+Bubble Bobble v0.5: https://youtu.be/ze9YP9dbtJI
+
 ## Game Controls
 ### Intro    
     * SPACE -> Skip Menu
@@ -28,7 +32,7 @@ If you want more information about the game, check out our wiki at the following
     * 1 -> Start
     * W -> Jump
     * A -> Move to the left
-    * S -> Move to the right
+    * D -> Move to the right
     * LEFT_SHIFT -> Bubble
 
 ### Player 2 (Keyboard)
@@ -39,4 +43,18 @@ If you want more information about the game, check out our wiki at the following
     * SPACE -> Bubble
 
 ## Changelist
+    
 ### 0.5 Version (21/04/2024)
+    * Intro screen implemented
+    * Bubble Bobble intro screen
+    * Space to pass Intro screens
+    * Level 1 with collisions
+    * Level 2 with collisions
+    * Player movement W,A,D
+    * Bubble attack L_Shift
+    * Original music
+    * Effect sounds
+    * Teleport holes
+    * UI 
+    
+    

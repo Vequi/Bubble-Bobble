@@ -306,6 +306,9 @@ void Scene::RenderGUI() const
 	//SetTextLineSpacing(7.0f);
 	//Temporal approach
 	const int n = TILE_SIZE;
-	DrawText(TextFormat("1UP : %d", player->GetScore()), 2 * n, 0, 1, GREEN);
+	DrawText(TextFormat("%d", player->GetScore()), 4 * n, 7, 8, WHITE);
+	DrawText(TextFormat("%d", player->GetHScore()), 15 * n, 7, 8, WHITE);
+
+	//DrawText(TextFormat("1UP : %d", player->GetScore()), 2 * n, 0, 1, GREEN);
 	//DrawTextEx(bbfont, TextFormat("1UP\n%d", player->GetScore()), {4*n, 0}, 10, 1, GREEN);
 }

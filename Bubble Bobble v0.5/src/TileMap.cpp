@@ -58,18 +58,19 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::L6SHADE_CORNERB] = { 9*n, 35*n, n, n };
 	dict_rect[(int)Tile::L6SHADE_3D] = { 2*n, 38*n, n, n };	
 	
-	dict_rect[(int)Tile::L34BLOCK] = { 0, 82*n, n, n };
-	dict_rect[(int)Tile::L34BLOCK_NUMT1] = { 0, 80*n, n, n};
-	dict_rect[(int)Tile::L34BLOCK_NUMT2] = { n, 80*n, n, n };	
-	dict_rect[(int)Tile::L34BLOCK_NUMB1] = { 0, 81*n, n, n};
-	dict_rect[(int)Tile::L34BLOCK_NUMB2] = { n, 81*n, n, n };
+	dict_rect[(int)Tile::L34BLOCKTL] = { 0, 82*n, n, n };
+	dict_rect[(int)Tile::L34BLOCK] = { 3*n, 62 * n, n, n };
+	dict_rect[(int)Tile::L34BLOCK_NUMT1] = { 0, 66*n, n, n};
+	dict_rect[(int)Tile::L34BLOCK_NUMT2] = { n, 66*n, n, n };	
+	dict_rect[(int)Tile::L34BLOCK_NUMB1] = { 0, 67*n, n, n};
+	dict_rect[(int)Tile::L34BLOCK_NUMB2] = { n, 67*n, n, n };
 
-	dict_rect[(int)Tile::L34SHADE_RIGHT] = { 6*n, 59*n, n, n };
-	dict_rect[(int)Tile::L34SHADE_CORNER] = { 2*n, 55*n, n, n };
-	dict_rect[(int)Tile::L34SHADE_B] = { 5*n, 60*n, n, n };
-	dict_rect[(int)Tile::L34SHADE_BD] = { 4*n, 60*n, n, n };
-	dict_rect[(int)Tile::L34SHADE_CORNERB] = { 6*n, 60*n, n, n };
-	dict_rect[(int)Tile::L34SHADE_3D] = { 2*n, 56*n, n, n };	
+	dict_rect[(int)Tile::L34SHADE_RIGHT] = { 3*n, 67*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_CORNER] = { 2*n, 67*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_B] = { 2*n, 68*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_BD] = { 9*n, 67*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_CORNERB] = { 9*n, 69*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_3D] = { 13*n, 67*n, n, n };	
 	
 	dict_rect[(int)Tile::L46BLOCK] = { 0, 82 * n, n, n };
 	dict_rect[(int)Tile::L46BLOCK_NUMT1] = { 0, 80 * n, n, n };

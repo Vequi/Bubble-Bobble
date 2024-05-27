@@ -13,6 +13,10 @@ Object::Object(const Point& p, ObjectType t) : Entity(p, OBJECT_PHYSICAL_SIZE, O
 	{
 		case ObjectType::CHERRY: rc = {5*n, 0, n, n}; break;
 		case ObjectType::BANANA: rc = {n, 0, n, n}; break;
+		case ObjectType::CAKE: rc = { 4*n, 0, n, n }; break;
+		case ObjectType::BOTTLE: rc = { 5*n, n, n, n }; break;
+		case ObjectType::ICECREAM: rc = { 2 * n, 0, n, n }; break;
+		case ObjectType::REDGEM: rc = { 3 * n, 3* n, n, n }; break;
 			 
 		default: LOG("Internal error: object creation of invalid type");
 	}
@@ -40,6 +44,18 @@ int Object::Points() const
 		PlaySound(objectPickup[0]);
 		SetSoundVolume(objectPickup[0], 0.1f);
 		return POINTS_BANANA;
+	}
+	else if (type == ObjectType::CAKE) {
+		objectPickup[0] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/GrabFruitSFX.wav");
+		PlaySound(objectPickup[0]);
+		SetSoundVolume(objectPickup[0], 0.1f);
+		return POINTS_CAKE;
+	}
+	else if (type == ObjectType::BOTTLE) {
+		objectPickup[0] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/GrabFruitSFX.wav");
+		PlaySound(objectPickup[0]);
+		SetSoundVolume(objectPickup[0], 0.1f);
+		return POINTS_BOTTLE;
 	}
 	else
 	{

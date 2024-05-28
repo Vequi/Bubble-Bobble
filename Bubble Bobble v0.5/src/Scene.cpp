@@ -195,6 +195,7 @@ AppStatus Scene::LoadLevel(int stage)
 				objects.push_back(obj);
 				map[i] = 0;
 			}
+			
 			++i;
 		}
 	}

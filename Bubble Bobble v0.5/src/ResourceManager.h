@@ -22,7 +22,8 @@ enum class Resource {
     IMG_BUBBLES,
     IMG_TILES,
     IMG_OBJECTS,
-    IMG_POWERUPS
+    IMG_POWERUPS,
+    IMG_ENEMIES,
 };
 
 class ResourceManager {

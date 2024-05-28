@@ -1,9 +1,10 @@
 #pragma once
 #include "Entity.h"
 
-#define SHOT_FRAME_SIZE 16
-#define SHOT_PHYSICAL_WIDTH 12
-#define SHOT_PHYSICAL_HEIGHT 14
+#define SHOT_PHYSICAL_WIDTH		12
+#define SHOT_PHYSICAL_HEIGHT	14
+#define SHOT_FRAME_WIDTH		16
+#define SHOT_FRAME_HEIGHT		16
 
 class Shot : public Entity {
 

@@ -99,58 +99,70 @@ void Bubble::MoveX ()
 {
 	AABB box;
 	int prev_x = pos.x;
-
-	if (moving == true) {
-		if (state == BBState::SHOT) {
-			if(direction == BBDirection::GOING_L)
-			{
-				pos.x -= BUBBLE_DASHX;
-			}
-			else if (direction == BBDirection::GOING_R)
-			{
-				pos.x += BUBBLE_DASHX;
-			}	
-			box = GetHitbox();
-			if (pos.x < BUBBLE_FRAME_SIZE) {
-				pos.x = BUBBLE_FRAME_SIZE;
-				state = BBState::STATIC;
-				SetAnimation((int)BBAnim::IDLE);
-			}
-			else if(pos.x>WINDOW_WIDTH-BUBBLE_FRAME_SIZE*2)
-			{
-				pos.x = WINDOW_WIDTH - BUBBLE_FRAME_SIZE*2;
-				state = BBState::STATIC;
-				SetAnimation((int)BBAnim::IDLE);
-			}
+	if (pos.y <= BUBBLE_HEIGHT) {
+		//left movement
+		if (WINDOW_WIDTH / 2 - BUBBLE_OFFSET + BUBBLE_MARGIN_Y <= pos.x)
+		{
+			pos.x -= BUBBLE_DASHX;
+			dir.x = -dir.x;
 		}
-		else if (state != BBState::SHOT && pos.y <= 40) {
-			if (WINDOW_WIDTH / 2 + 13 <= pos.x) {
-				pos.x -= BUBBLE_DASHY;
-				direction = BBDirection::GOING_L;
-			}
-			else if (WINDOW_WIDTH / 2 - 27 >= pos.x) {
-				pos.x += BUBBLE_DASHY;
-				direction = BBDirection::GOING_R;
-			}
-			else {
-				if (direction == BBDirection::GOING_L) {
-					pos.x -= BUBBLE_DASHY;
-				}
-				if(direction == BBDirection::GOING_R)
-				{
-					pos.x += BUBBLE_DASHY;
-				}
-			}
+		//right movement
+		else if (WINDOW_WIDTH / 2 - BUBBLE_OFFSET - BUBBLE_MARGIN_Y >= pos.x)
+		{
+			pos.x += BUBBLE_DASHX;
+			dir.x = -dir.x;
 		}
 	}
+
+	//if (moving == true) {
+	//	if (state == BBState::SHOT) {
+	//		if(direction == BBDirection::GOING_L)
+	//		{
+	//			pos.x -= BUBBLE_DASHX;
+	//		}
+	//		else if (direction == BBDirection::GOING_R)
+	//		{
+	//			pos.x += BUBBLE_DASHX;
+	//		}	
+	//		box = GetHitbox();
+	//		if (pos.x < BUBBLE_FRAME_SIZE) {
+	//			pos.x = BUBBLE_FRAME_SIZE;
+	//			state = BBState::STATIC;
+	//			SetAnimation((int)BBAnim::IDLE);
+	//		}
+	//		else if(pos.x>WINDOW_WIDTH-BUBBLE_FRAME_SIZE*2)
+	//		{
+	//			pos.x = WINDOW_WIDTH - BUBBLE_FRAME_SIZE*2;
+	//			state = BBState::STATIC;
+	//			SetAnimation((int)BBAnim::IDLE);
+	//		}
+	//	}
+	//	else if (state != BBState::SHOT && pos.y <= 40) {
+	//		if (WINDOW_WIDTH / 2 + 13 <= pos.x) {
+	//			pos.x -= BUBBLE_DASHY;
+	//			direction = BBDirection::GOING_L;
+	//		}
+	//		else if (WINDOW_WIDTH / 2 - 27 >= pos.x) {
+	//			pos.x += BUBBLE_DASHY;
+	//			direction = BBDirection::GOING_R;
+	//		}
+	//		else {
+	//			if (direction == BBDirection::GOING_L) {
+	//				pos.x -= BUBBLE_DASHY;
+	//			}
+	//			if(direction == BBDirection::GOING_R)
+	//			{
+	//				pos.x += BUBBLE_DASHY;
+	//			}
+	//		}
+	//	}
+	//}
 }
 void Bubble::MoveY()
 {
-	if (moving == true) {
-		if(state!=BBState::SHOT&&pos.y>40)
-		{
-			pos.y -= BUBBLE_DASHY;
-		}
+	if (pos.y > BUBBLE_HEIGHT)
+	{
+		pos.y -= BUBBLE_DASHY;
 	}
 }
 void Bubble::BubbleCnt()

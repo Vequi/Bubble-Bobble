@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Project executed on 27-05-2024 at 22:53:46.
+=======
+Project executed on 28-05-2024 at 13:14:07.
+>>>>>>> bubble-rework
 main.cpp(13): Application start

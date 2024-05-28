@@ -40,6 +40,18 @@
     <ClCompile Include="src\StaticImage.cpp">
       <Filter>Render</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
+=======
+    <ClCompile Include="src\Enemy.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Bubble.cpp">
+      <Filter>Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Projectiles.cpp">
+      <Filter>Projectiles</Filter>
+    </ClCompile>
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Globals.h">
@@ -84,6 +96,18 @@
     <ClInclude Include="src\StaticImage.h">
       <Filter>Render</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
+=======
+    <ClInclude Include="src\Enemy.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Bubble.h">
+      <Filter>Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Projectiles.h">
+      <Filter>Projectiles</Filter>
+    </ClInclude>
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Application">
@@ -100,6 +124,9 @@
     </Filter>
     <Filter Include="Geometry">
       <UniqueIdentifier>{781b1539-620c-4c36-8898-bab26c32aca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Projectiles">
+      <UniqueIdentifier>{0f431615-2825-477e-bffc-61e6a62a09db}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

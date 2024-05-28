@@ -1,7 +1,7 @@
 #pragma once
 #include "Entity.h"
 #include "TileMap.h"
-#include "Projectiles.h"
+#include "Shot.h"
 
 #define BUBBLE_FRAME_SIZE 16
 #define BUBBLE_PHYSICAL_WIDTH 12

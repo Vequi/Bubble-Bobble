@@ -1,13 +1,13 @@
 #include "Bubble.h"
 #include "Sprite.h"
 #include "TileMap.h"
-#include "Globals.h"
-#include "raymath.h"
+#include "Enemy.h"
 
-Bubble::Bubble(const Point& p, BBDirection dir) :
-	Entity(p, BUBBLE_PHYSICAL_WIDTH, BUBBLE_PHYSICAL_HEIGHT, BUBBLE_FRAME_SIZE, BUBBLE_FRAME_SIZE)
+
+Bubble::Bubble(const Point& p, const Point& d, int width, int height, int frame_width, int frame_heigth, EnemyType type) :
+	Shot(p, d, width, height, frame_width, frame_heigth)
 {
-	direction = dir;
+	
 	bubble_delay = BUBBLE_DELAY;
 	map = nullptr;
 	alive = true;
@@ -19,7 +19,6 @@ Bubble::~Bubble()
 }
 AppStatus Bubble::Initialise()
 {
-	int i;
 	const int n = BUBBLE_FRAME_SIZE;
 
 	ResourceManager& data = ResourceManager::Instance();
@@ -112,51 +111,18 @@ void Bubble::MoveX ()
 			pos.x += BUBBLE_DASHX;
 			dir.x = -dir.x;
 		}
+		else 
+		{
+			if (IsMovingLeft()) {
+				pos.x -= BUBBLE_DASHX;
+			}
+			else if (IsMovingRight()) {
+				pos.x += BUBBLE_DASHX;
+			}
+		}
+		
 	}
 
-	//if (moving == true) {
-	//	if (state == BBState::SHOT) {
-	//		if(direction == BBDirection::GOING_L)
-	//		{
-	//			pos.x -= BUBBLE_DASHX;
-	//		}
-	//		else if (direction == BBDirection::GOING_R)
-	//		{
-	//			pos.x += BUBBLE_DASHX;
-	//		}	
-	//		box = GetHitbox();
-	//		if (pos.x < BUBBLE_FRAME_SIZE) {
-	//			pos.x = BUBBLE_FRAME_SIZE;
-	//			state = BBState::STATIC;
-	//			SetAnimation((int)BBAnim::IDLE);
-	//		}
-	//		else if(pos.x>WINDOW_WIDTH-BUBBLE_FRAME_SIZE*2)
-	//		{
-	//			pos.x = WINDOW_WIDTH - BUBBLE_FRAME_SIZE*2;
-	//			state = BBState::STATIC;
-	//			SetAnimation((int)BBAnim::IDLE);
-	//		}
-	//	}
-	//	else if (state != BBState::SHOT && pos.y <= 40) {
-	//		if (WINDOW_WIDTH / 2 + 13 <= pos.x) {
-	//			pos.x -= BUBBLE_DASHY;
-	//			direction = BBDirection::GOING_L;
-	//		}
-	//		else if (WINDOW_WIDTH / 2 - 27 >= pos.x) {
-	//			pos.x += BUBBLE_DASHY;
-	//			direction = BBDirection::GOING_R;
-	//		}
-	//		else {
-	//			if (direction == BBDirection::GOING_L) {
-	//				pos.x -= BUBBLE_DASHY;
-	//			}
-	//			if(direction == BBDirection::GOING_R)
-	//			{
-	//				pos.x += BUBBLE_DASHY;
-	//			}
-	//		}
-	//	}
-	//}
 }
 void Bubble::MoveY()
 {

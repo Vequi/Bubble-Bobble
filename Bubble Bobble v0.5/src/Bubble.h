@@ -35,9 +35,9 @@ enum class BBAnim {
 	NUM_ANIMATIONS 
 };
 
-class Bubble : public Entity {
+class Bubble : public Shot {
 public:
-	Bubble(const Point& p, BBDirection direction);
+	Bubble(const Point& p, const Point& d, int width, int heigth, int frame_width, int frame_heigth, EnemyType type);
 	~Bubble();
 	AppStatus Initialise();
 	void SetTileMap(TileMap* tilemap);
@@ -47,7 +47,6 @@ public:
 	bool IsAlive() const;
 
 private:
-
 
 	void MoveX();
 	void MoveY();

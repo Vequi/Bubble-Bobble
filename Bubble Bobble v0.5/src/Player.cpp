@@ -3,6 +3,7 @@
 #include "Sprite.h"
 #include "TileMap.h"
 #include "Globals.h"
+#include "ShotManager.h"
 #include <raymath.h>
 
 Sound playerSound[10];
@@ -14,6 +15,7 @@ Player::Player(const Point& p, State s, Look view) :
 	look = view;
 	jump_delay = PLAYER_JUMP_DELAY;
 	map = nullptr;
+	shots = nullptr;
 	score = 0;
 	high_score = 0;
 	timeBubble = 0;
@@ -82,6 +84,14 @@ AppStatus Player::Initialise()
 	sprite->SetAnimationDelay((int)PlayerAnim::LEVITATING_LEFT, ANIM_DELAY);
 	for (i = 0; i < 2; ++i)
 		sprite->AddKeyFrame((int)PlayerAnim::LEVITATING_LEFT, { (float)i*n, 5*n, n, n });
+
+	sprite->SetAnimationDelay((int)PlayerAnim::SHOT_RIGHT, ANIM_DELAY);
+	for (i = 0; i < 4; ++i)
+		sprite->AddKeyFrame((int)PlayerAnim::SHOT_RIGHT, { (float)i * n, 2 * n, -n, n });
+	sprite->SetAnimationDelay((int)PlayerAnim::SHOT_LEFT, ANIM_DELAY);
+	for (i = 0; i < 4; ++i)
+		sprite->AddKeyFrame((int)PlayerAnim::SHOT_LEFT, { (float)i * n, 2 * n, n, n });
+
 
 	sprite->SetAnimationDelay((int)PlayerAnim::CLIMBING, ANIM_LADDER_DELAY);
 	for (i = 0; i < 4; ++i)
@@ -354,23 +364,22 @@ void Player::MoveY()
 }
 void Player::BubbleShot()
 {
+	Point pos, redir;
+	pos = { pos.x, pos.y };
 	timeBubble+=GetFrameTime();
 	if (IsKeyPressed(KEY_LEFT_SHIFT) && timeBubble >= 0.25f) {
 			playerSound[1] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/BubbleAtkSFX.wav");
 			PlaySound(playerSound[1]);
 			SetSoundVolume(playerSound[1], 0.1f);
 			if (IsLookingLeft()) {
-				Bubble* bubl = new Bubble({ pos.x-PLAYER_PHYSICAL_WIDTH, pos.y }, BBDirection::GOING_L);
-				bubl->Initialise();
-				bubl->SetTileMap(map);
-				bubbles.push_back(bubl);
+				redir = { -BUBBLE_DASH, 0 };
+				SetAnimation((int)PlayerAnim::SHOT_LEFT);
 			}
 			else if (IsLookingRight()) {
-				Bubble* bubl = new Bubble({ pos.x + PLAYER_PHYSICAL_WIDTH, pos.y }, BBDirection::GOING_R);
-				bubl->Initialise();
-				bubl->SetTileMap(map);
-				bubbles.push_back(bubl);
+				redir = { BUBBLE_DASH, 0 };
+				SetAnimation((int)PlayerAnim::SHOT_RIGHT);
 			}
+			shots->Add(pos,redir);
 			timeBubble = 0;
 	}
 }

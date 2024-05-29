@@ -1,21 +1,27 @@
 #include "Shot.h"
 #include "StaticImage.h"
+#include "Enemy.h"
 
-
-Shot::Shot()
+Shot::Shot(const Point& p, const Point& d, int width, int heigth, int frame_width, int frame_height) :
+	Entity(p, d, width, heigth, frame_width, frame_height)
 {
-	Rectangle rc = { 2 * TILE_SIZE, 12, SHOT_FRAME_WIDTH, SHOT_FRAME_HEIGHT };
-	ResourceManager& data = ResourceManager::Instance();
-	render = new StaticImage(data.GetTexture(Resource::IMG_ENEMIES), rc);
-
-	SetAlive(false);
+	map = nullptr;
 }
 Shot::~Shot()
 {
 }
-void Shot::Init(const Point& p, const Point& dir)
+void Shot::Init(const Point& p, const Point& d)
 {
-	Set(p, dir, SHOT_PHYSICAL_WIDTH, SHOT_PHYSICAL_HEIGHT, SHOT_FRAME_WIDTH, SHOT_FRAME_HEIGHT);
+	Set(p, d, SHOT_PHYSICAL_WIDTH, SHOT_PHYSICAL_HEIGHT, SHOT_FRAME_WIDTH, SHOT_FRAME_HEIGHT);
+}
+void Shot::SetAnimation(int id)
+{
+	Sprite* sprite = dynamic_cast<Sprite*>(render);
+	sprite->SetAnimation(id);
+}
+void Shot::SetTileMap(TileMap* tilemap)
+{
+	map = tilemap;
 }
 bool Shot::IsMovingLeft() const
 {

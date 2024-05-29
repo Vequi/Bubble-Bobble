@@ -13,7 +13,7 @@ EnemyManager::~EnemyManager()
 AppStatus EnemyManager::Initialise()
 {
 	ResourceManager& data = ResourceManager::Instance();
-	if (data.LoadTexture(Resource::IMG_ENEMIES, "BubbleBobble_Art/Enemies/zenchanSprite.png") != AppStatus::OK)
+	if (data.LoadTexture(Resource::IMG_ZENCHAN, "BubbleBobble_Art/Enemies/zenchanSprite.png") != AppStatus::OK)
 	{
 		LOG("Failed to load enemies sprite texture");
 		return AppStatus::ERROR;
@@ -92,7 +92,6 @@ void EnemyManager::DrawDebug() const
 {
 	for (const Enemy* enemy : enemies)
 	{
-		enemy->DrawVisibilityArea(DARKGRAY);
 		enemy->DrawHitbox(RED);
 	}
 }

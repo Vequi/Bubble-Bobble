@@ -17,13 +17,15 @@ enum class Resource {
     IMG_LVL46,
     IMG_LVL100,
     IMG_SCORE,
-    IMG_PLAYER, 
+    IMG_PLAYER,
     IMG_PLAYER2,
     IMG_BUBBLES,
     IMG_TILES,
     IMG_OBJECTS,
     IMG_POWERUPS,
     IMG_ENEMIES,
+    IMG_ZENCHAN,
+    IMG_MAITA,
 };
 
 class ResourceManager {

@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "Tilemap.h"
 
 
 #define ZENCHAN_FRAME_SIZE		16
@@ -11,16 +12,13 @@
 #define MAITA_PHYSICAL_WIDTH	12
 #define MAITA_PHYSICAL_HEIGHT	14
 
-enum class EnemyType { ZENCHAN, MAITA };
+enum class EnemyType { NONE, ZENCHAN, MAITA };
 
 class Enemy : public Entity
 {
 public:
 	Enemy(const Point& p, int width, int height, int frame_width, int frame_height);
 	virtual ~Enemy();
-
-	//Draw the maximum visibility area of the enemy
-	void DrawVisibilityArea(const Color& col) const;
 
 	//Pure virtual functions, any class inheriting from this class must provide its own implementations
 
@@ -36,11 +34,16 @@ public:
 	//Get the type of enemy
 	virtual EnemyType GetEnemyType() const = 0;
 
+	void SetTileMap(TileMap* tilemap);
+
 protected:
 	//Return true if the given hitbox is within the visibility area and the enemy is facing it
 	bool IsVisible(const AABB& hitbox);
 
 	Look look;
 	AABB visibility_area;
+	TileMap* map;
+
+	void SetAnimation(int id);
 };
 

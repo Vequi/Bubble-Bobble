@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "TileMap.h"
 #include "Bubble.h"
+#include "ShotManager.h"
 
 //Representation model size: 32x32
 #define PLAYER_FRAME_SIZE		16
@@ -31,6 +32,8 @@
 //Gravity affects jumping velocity when jump_delay is 0
 #define GRAVITY_FORCE			1
 
+#define BUBBLE_DASH 1
+
 //Logic states
 enum class State { IDLE, WALKING, JUMPING, FALLING, CLIMBING, DEAD };
 
@@ -41,6 +44,7 @@ enum class PlayerAnim {
 	WALKING_LEFT, WALKING_RIGHT,
 	JUMPING_LEFT, JUMPING_RIGHT,
 	LEVITATING_LEFT, LEVITATING_RIGHT,
+	SHOT_RIGHT, SHOT_LEFT,
 	FALLING_LEFT, FALLING_RIGHT,
 	CLIMBING, CLIMBING_PRE_TOP, CLIMBING_TOP,
 	SHOCK_LEFT, SHOCK_RIGHT,
@@ -110,7 +114,7 @@ private:
 	std::vector<Bubble*> bubbles;
 	float timeBubble;
 	float shootTime;
-
+	ShotManager* shots;
 	TileMap *map;
 
 	int score;

@@ -2,4 +2,4 @@ remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 gem "github-pages", group: :jekyll_plugins
-description:
+description: [This project is a tribute to the game Bubble Bobble, released in Japan in 1986 by Taito Corporation. This team, Quilmo Studios, is composed by 2 students of CITM Barcelona, Spain.]

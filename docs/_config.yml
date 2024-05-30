@@ -4,3 +4,7 @@ plugins:
 gem "github-pages", group: :jekyll_plugins
 description: [This project is a tribute to the game Bubble Bobble, released in Japan in 1986 by Taito Corporation.]
 title: [Bubble Bobble Tribute]
+
+github:
+  repository_url: https://github.com/mxarc
+  repository_url: https://github.com/Vequi

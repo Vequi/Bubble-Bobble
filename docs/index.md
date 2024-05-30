@@ -2,7 +2,8 @@
 
 description: [This project is a tribute to the game Bubble Bobble, released in Japan in 1986 by Taito Corporation. This team, Quilmo Studios, is composed by 2 students of CITM Barcelona, Spain.]
 
-** Bubble Bobble 1986
+** Bubble Bobble 1986 **
+
 Bubble Bobble is an arcade platform game from Fukio Mitsuji, originally developed and published by Taito in 1986. The players will control two dragons, the green one named Bub and the blue one named Bob who need to pass 100 levels to save their girlfriends. In each level, Bub and Bob must defeat each enemy with bubbles that they shoot from their mouths.
 
 <h1>Quilmo Studios Members</h1>

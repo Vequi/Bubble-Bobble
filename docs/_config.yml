@@ -3,3 +3,4 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 gem "github-pages", group: :jekyll_plugins
 description: [This project is a tribute to the game Bubble Bobble, released in Japan in 1986 by Taito Corporation. This team, Quilmo Studios, is composed by 2 students of CITM Barcelona, Spain.]
+title: [Bubble Bobble Tribute]

@@ -133,3 +133,62 @@ void Zenchan::MoveX()
 		}
 	}
 }
+EnemyType Zenchan::GetEnemyType() const
+{
+	return EnemyType::ZENCHAN;
+}
+void Zenchan::SetAnimation(int id)
+{
+	Sprite* sprite = dynamic_cast<Sprite*>(render);
+	sprite->SetAnimation(id);
+}
+void Zenchan::StartFalling()
+{
+	dir.y = 1;
+}
+void Zenchan::Halt()
+{
+	dir = { 0, 0 };
+	state = ZenchanState::ROAMING;
+}
+void Zenchan::MoveY()
+{
+	AABB box, prev_box;
+	int prev_x = pos.x;
+	int prev_y = pos.y;
+
+	if (wakywaky == true)
+	{
+		pos.y -= 1;
+		hbox = true;
+	}
+
+	else {
+		hbox = false;
+	}
+
+	if (state != ZenchanState::JUMPING && !hbox)
+	{
+		pos.y += 1;
+
+		box = GetHitbox();
+		if (map->TestCollisionGround(box, &pos.y))
+		{
+			if (state == ZenchanState::FALLING) {
+				Halt();
+			}
+			if (IsKeyPressed(KEY_X)) {
+				dir.y = -1;
+			}
+		}
+		else {
+			if (state != ZenchanState::FALLING) {
+				StartFalling();
+			}
+		}
+
+	}
+
+}
+
+

@@ -23,7 +23,6 @@ public:
 	//Update the enemy according to its logic, return true if the enemy must shoot
 	bool Update(const AABB& box) override;
 
-
 	//To avoid errors
 	void GetShootingPosDir(Point* pos, Point* dir) const {};
 
@@ -33,11 +32,21 @@ public:
 
 private:
 
-	//Movement
-	void MoveX(const AABB& box);
-	void MoveY(const AABB& box);
+	void SetAnimation(int id);
+	float pat = 0;
+	float jumpCD = 1.0f;
+	float jumpCDT = 0;
+	int attack;
+	int step;
+	int frame;
+	bool wakywaky = false;
+	bool hbox = false;
+	bool isJumping = false;
+	TileMap* map;
+	void MoveX();
+	void MoveY();
+	void Halt();
 	void StartFalling();
-
 	ZenchanState state;
 
 };

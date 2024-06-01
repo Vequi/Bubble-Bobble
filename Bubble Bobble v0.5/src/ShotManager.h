@@ -3,6 +3,7 @@
 #include "Shot.h"
 #include "TileMap.h"
 #include "ParticleManager.h"
+#include "EnemyManager.h"
 
 #define MAX_SHOTS		16
 
@@ -17,11 +18,12 @@ public:
 	//Set the TileMap reference for managing shot collisions
 	void SetTileMap(TileMap* tilemap);
 
+	void SetEnemyManager(EnemyManager* enemies);
 	//Set the TileMap reference for managing shot collisions
 	void SetParticleManager(ParticleManager* particles);
 
 	//Add a new shot with the given position and direction
-	void Add(const Point& pos, const Point& dir);
+	void Add(const Point& pos, const Point& dir, ShotKind kind);
 
 	//Remove all the shots
 	void Clear();

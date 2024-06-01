@@ -109,6 +109,7 @@ private:
 	bool CollisionX(const Point& p, int distance) const;
 	bool CollisionY(const Point& p, int distance) const;
 	int GetLadderCenterPos(int pixel_x, int pixel_y) const;
+	
 
 	//Tile map
 	Tile *map;

@@ -72,12 +72,16 @@ Point Entity::GetRenderingPosition() const
 void Entity::Draw() const
 {
 	Point p = GetRenderingPosition();
-	render->Draw(p.x, p.y);
+	if (render != nullptr) {
+		render->Draw(p.x, p.y);
+	}
 }
 void Entity::DrawTint(const Color& col) const
 {
 	Point p = GetRenderingPosition();
-	render->DrawTint(p.x, p.y, col);
+	if (render != nullptr) {
+		render->DrawTint(p.x, p.y, col);
+	}
 }
 void Entity::Teleport() 
 {
@@ -89,16 +93,20 @@ void Entity::Teleport()
 void Entity::DrawHitbox(const Color& col) const
 {
 	Color c = col;
-	c.a = 128;		//50% transparent
+	c.a = 128;  //50% transparent
 
-	render->DrawBox(pos.x, pos.y-(height-1), width, height, c);
-	render->DrawCorners(pos.x, pos.y-(height-1), width, height);
+	if (render != nullptr) {
+		render->DrawBox(pos.x, pos.y - (height - 1), width, height, c);
+		render->DrawCorners(pos.x, pos.y - (height - 1), width, height);
+	}
 }
 void Entity::DrawHitbox(int x, int y, int w, int h, const Color& col) const
 {
 	Color c = col;
-	c.a = 128;		//50% transparent
+	c.a = 128;  //50% transparent
 
-	render->DrawBox(x, y-(h-1), w, h, c);
-	render->DrawCorners(x, y-(h-1), w, h);
+	if (render != nullptr) {
+		render->DrawBox(x, y - (h - 1), w, h, c);
+		render->DrawCorners(x, y - (h - 1), w, h);
+	}
 }

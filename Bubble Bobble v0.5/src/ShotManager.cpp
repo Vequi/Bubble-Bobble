@@ -1,4 +1,5 @@
 #include "ShotManager.h"
+#include "Bubble.h"
 
 ShotManager::ShotManager()
 {
@@ -23,7 +24,7 @@ void ShotManager::SetParticleManager(ParticleManager* particles)
 {
 	this->particles = particles;
 }
-void ShotManager::Add(const Point& pos, const Point& dir)
+void ShotManager::Add(const Point& pos, const Point& dir, ShotKind kind)
 {
 	bool found = false;
 	for (Shot& shot : shots)
@@ -31,6 +32,7 @@ void ShotManager::Add(const Point& pos, const Point& dir)
 		if (!shot.IsAlive())
 		{
 			shot.Init(pos, dir);
+			shot.SetAlive(true);
 			found = true;
 			break;
 		}

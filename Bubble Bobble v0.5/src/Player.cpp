@@ -379,7 +379,7 @@ void Player::BubbleShot()
 				redir = { BUBBLE_DASH, 0 };
 				SetAnimation((int)PlayerAnim::SHOT_RIGHT);
 			}
-			shots->Add(pos,redir);
+			shots->Add(pos,redir,ShotKind::BUBBLE);
 			timeBubble = 0;
 	}
 }

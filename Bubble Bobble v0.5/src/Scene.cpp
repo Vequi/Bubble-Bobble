@@ -93,6 +93,8 @@ AppStatus Scene::LoadLevel(int stage)
 	int x, y, i;
 	Tile tile;
 	Point pos;
+	AABB hbox, area;
+	Look look;
 	int *map = nullptr;
 	Object *obj = nullptr;
 	
@@ -204,6 +206,15 @@ AppStatus Scene::LoadLevel(int stage)
 				obj = new Object(pos, ObjectType::BANANA);
 				objects.push_back(obj);
 				map[i] = 0;
+			}
+			else if (tile == Tile::ZENCHAN)
+			{
+				pos.x = x * TILE_SIZE;
+				pos.y = y * TILE_SIZE + TILE_SIZE - 1;
+				if (x <= LEVEL_WIDTH / 2) look = Look::RIGHT;
+				else if (x > LEVEL_WIDTH / 2) look = Look::LEFT;
+				hbox = enemies->GetEnemyHitBox(pos, EnemyType::ZENCHAN);
+				enemies->Add(pos, EnemyType::ZENCHAN, area, look);
 			}
 			
 			++i;

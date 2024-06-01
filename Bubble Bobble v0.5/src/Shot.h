@@ -9,6 +9,8 @@
 #define SHOT_FRAME_WIDTH		16
 #define SHOT_FRAME_HEIGHT		16
 
+enum class ShotKind { BUBBLE, LIGHTNING };
+
 class Shot : public Entity {
 
 public:

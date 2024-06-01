@@ -5,6 +5,7 @@
 EnemyManager::EnemyManager()
 {
 	shots = nullptr;
+	map	= nullptr;
 }
 EnemyManager::~EnemyManager()
 {
@@ -25,6 +26,10 @@ void EnemyManager::SetShotManager(ShotManager* shots)
 {
 	this->shots = shots;
 }
+void EnemyManager::SetTileMap(TileMap* tilemap)
+{
+	map = tilemap;
+}
 void EnemyManager::Add(const Point& pos, EnemyType type, const AABB& area, Look look)
 {
 	Enemy* enemy;
@@ -44,6 +49,7 @@ void EnemyManager::Add(const Point& pos, EnemyType type, const AABB& area, Look 
 	}
 
 	enemy->Initialise(look, area);
+	enemy->SetTileMap(map);
 	enemies.push_back(enemy);
 }
 AABB EnemyManager::GetEnemyHitBox(const Point& pos, EnemyType type) const
@@ -68,18 +74,24 @@ AABB EnemyManager::GetEnemyHitBox(const Point& pos, EnemyType type) const
 	AABB hitbox(p, width, height);
 	return hitbox;
 }
-void EnemyManager::Update(const AABB& player_hitbox)
+void EnemyManager::Update(const AABB& player_hitbox, bool& hit)
 {
 	bool shoot;
 	Point p, d;
+	AABB box;
+	hit = false;
 
 	for (Enemy* enemy : enemies)
 	{
-		shoot = enemy->Update(player_hitbox);
-		if (shoot)
-		{
-			enemy->GetShootingPosDir(&p, &d);
-			shots->Add(p, d);
+		if (enemy->IsAlive()) {
+			shoot = enemy->Update(player_hitbox);
+			if (shoot)
+			{
+				enemy->GetShootingPosDir(&p, &d);
+				shots->Add(p, d, ShotKind::BUBBLE);
+			}
+			box = enemy->GetHitbox();
+			if (!hit) hit = box.TestAABB(player_hitbox);
 		}
 	}
 }

@@ -14,7 +14,7 @@ Zenchan::Zenchan(const Point& p, int width, int height, int frame_width, int fra
 Zenchan::~Zenchan()
 {
 }
-AppStatus Zenchan::Initialise(Look look, const AABB& area)
+AppStatus Zenchan::Initialise(Look look, const AABB& sight)
 {
 	int i;
 	const int n = ZENCHAN_FRAME_SIZE;
@@ -57,7 +57,7 @@ AppStatus Zenchan::Initialise(Look look, const AABB& area)
 	else if (look == Look::RIGHT) {
 		sprite->SetAnimation((int)ZenchanAnim::WALKING_RIGHT);
 	}
-	visibility_area = area;
+	area = sight;
 	return AppStatus::OK;
 }
 

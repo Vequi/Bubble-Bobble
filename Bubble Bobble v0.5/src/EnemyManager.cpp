@@ -33,10 +33,10 @@ void EnemyManager::Add(const Point& pos, EnemyType type, const AABB& area, Look 
 	{
 		enemy = new Zenchan(pos, ZENCHAN_PHYSICAL_WIDTH, ZENCHAN_PHYSICAL_HEIGHT, ZENCHAN_FRAME_SIZE, ZENCHAN_FRAME_SIZE);
 	}
-	else if (type == EnemyType::MAITA)
-	{
-		enemy = new Maita(pos, MAITA_PHYSICAL_WIDTH, ZENCHAN_PHYSICAL_HEIGHT, ZENCHAN_FRAME_SIZE, ZENCHAN_FRAME_SIZE);
-	}
+	//else if (type == EnemyType::MAITA)
+	//{
+	//	enemy = new Maita(pos, MAITA_PHYSICAL_WIDTH, ZENCHAN_PHYSICAL_HEIGHT, ZENCHAN_FRAME_SIZE, ZENCHAN_FRAME_SIZE);
+	//}
 	else
 	{
 		LOG("Internal error: trying to add a new enemy with invalid type");
@@ -54,11 +54,11 @@ AABB EnemyManager::GetEnemyHitBox(const Point& pos, EnemyType type) const
 		width = ZENCHAN_PHYSICAL_WIDTH;
 		height = ZENCHAN_PHYSICAL_HEIGHT;
 	}
-	else if (type == EnemyType::MAITA)
-	{
-		width = MAITA_PHYSICAL_WIDTH;
-		height = MAITA_PHYSICAL_HEIGHT;
-	}
+	//else if (type == EnemyType::MAITA)
+	//{
+	//	width = MAITA_PHYSICAL_WIDTH;
+	//	height = MAITA_PHYSICAL_HEIGHT;
+	//}
 	else
 	{
 		LOG("Internal error while computing hitbox for an invalid enemy type");

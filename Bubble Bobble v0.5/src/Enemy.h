@@ -37,11 +37,10 @@ public:
 	void SetTileMap(TileMap* tilemap);
 
 protected:
-	//Return true if the given hitbox is within the visibility area and the enemy is facing it
-	bool IsVisible(const AABB& hitbox);
 
+	bool IsVisible(const AABB& hitbox);
 	Look look;
-	AABB visibility_area;
+	AABB area;
 	TileMap* map;
 
 	void SetAnimation(int id);

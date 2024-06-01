@@ -3,6 +3,9 @@
 #include "Player.h"
 #include "TileMap.h"
 #include "Object.h"
+#include "EnemyManager.h"
+#include "Enemy.h"
+
 
 enum class DebugMode { OFF, SPRITES_AND_HITBOXES, ONLY_HITBOXES, SIZE };
 
@@ -28,7 +31,7 @@ private:
     void RenderGUI() const;
 
     Player *player;
-    
+    EnemyManager *enemies;
     TileMap *level;
     std::vector<Object*> objects;
     std::vector<Bubble*> bubbleEnemies;

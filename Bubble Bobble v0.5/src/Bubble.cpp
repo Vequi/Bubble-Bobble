@@ -49,7 +49,6 @@ AppStatus Bubble::Initialise()
 	sprite->SetAnimationDelay((int)BBAnim::LIGHTRED_STATIC, ANIM_DELAY);
 	sprite->AddKeyFrame((int)BBAnim::LIGHTRED_STATIC, { 7*n, n, n, n });
 
-
 	//sprite->SetAnimationDelay((int)BBAnim::RED_STATIC, ANIM_DELAY);
 	//sprite->AddKeyFrame((int)BBAnim::RED_STATIC, { n, 3*n, n, n });
 

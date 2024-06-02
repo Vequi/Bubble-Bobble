@@ -39,7 +39,7 @@ _Quilmo Studios Members_
 
     * F1 -> Check hitboxes
 
-<h1>YOUTUBE VIDEO <a href = "https://github.com/mxarc">HERE</a></h1>
+<h1>YOUTUBE VIDEO <a href = "https://youtu.be/0Gqjm8cHbeI">HERE</a></h1>
 
 <h1>INSTALL LATEST RELEASE</h1>
 

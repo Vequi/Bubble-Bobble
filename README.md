@@ -2,6 +2,10 @@
 ## Presentation 
 This project is a tribute to the game **_Bubble Bobble_**, released in Japan in 1986 by Taito Corporation. This team, Quilmo Studios, is composed by 2 students of CITM Barcelona, Spain.
 
+**GITHUB PAGE:**
+
+https://vequi.github.io/BubbleBobble-QuilmoStudios/
+
 **GROUP MEMBERS:**
 
 Marc Amo Mateu - Link to GitHub: https://github.com/mxarc

@@ -16,7 +16,7 @@
 
 #define BUBBLE_DELAY 2
 
-#define BUBBLE_DASHX 1
+#define BUBBLE_DASHX 3
 #define BUBBLE_DASHY 1
 
 #define RED_TIME				7		

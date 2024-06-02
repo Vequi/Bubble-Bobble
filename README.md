@@ -26,6 +26,7 @@ If you want more information about the game, check out our wiki at the following
 ## 1 minute YT Video
 
 Bubble Bobble v0.5: https://youtu.be/ze9YP9dbtJI
+Bubble Bobble Alpha: 
 
 ## Game Controls
 ### Intro    
@@ -73,5 +74,10 @@ Bubble Bobble v0.5: https://youtu.be/ze9YP9dbtJI
     * Defined bubbles physics + collisions
     * Implemented bubbles animations
     
-    
-    
+### Alpha Version (02/06/2024)    
+    * Added levels 34,46 & 100
+    * Added items Cake, Bottle, Icecream & Redgem
+    * Github page
+    * Changes on the Bubbles
+    * Added points to the items
+    * Fullscreen

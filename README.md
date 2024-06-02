@@ -27,7 +27,7 @@ If you want more information about the game, check out our wiki at the following
 
 Bubble Bobble v0.5: https://youtu.be/ze9YP9dbtJI
 
-Bubble Bobble Alpha: 
+Bubble Bobble Alpha: https://youtu.be/0Gqjm8cHbeI
 
 ## Game Controls
 ### Intro    

@@ -23,7 +23,6 @@ _Quilmo Studios Members_
 
 <h1>YOUTUBE VIDEO</h1>
 
-https://github.com/mxarc
 
 <h1>INSTALL LATEST RELEASE</h1>
 

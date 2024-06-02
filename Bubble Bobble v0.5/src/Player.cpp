@@ -247,23 +247,21 @@ void Player::Update()
 {
 	//Player doesn't use the "Entity::Update() { pos += dir; }" default behaviour.
 	//Instead, uses an independent behaviour for each axis.
-	MoveX();
-	MoveY();
-	BubbleShot();
-	auto it = bubbles.begin();
-	while (it!=bubbles.end())
-	{
-		if ((*it)->IsAlive() == false) {
-			delete *it;
-			it = bubbles.erase(it);
-		}
-		else
+	Sprite* sprite = dynamic_cast<Sprite*>(render);
+	if (state == State::DEAD) {
+		if (sprite->IsAnimationComplete())
 		{
-			(*it)->Update();
-			it++;
+			state = State::IDLE;
+			SetAnimation((int)PlayerAnim::IDLE_RIGHT);
 		}
 	}
-	Sprite* sprite = dynamic_cast<Sprite*>(render);
+	else {
+	
+		MoveX();
+		MoveY();
+		BubbleShot();
+		
+	}
 	sprite->Update();
 	Teleport();
 }

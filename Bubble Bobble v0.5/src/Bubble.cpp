@@ -12,10 +12,15 @@ Bubble::Bubble(const Point& p, const Point& d, int width, int height, int frame_
 	map = nullptr;
 	alive = true;
 	moving = true;
+	render = nullptr;
 }
 
 Bubble::~Bubble()
 {
+	if (render != nullptr) {
+		delete render;
+		render = nullptr;
+	}
 }
 AppStatus Bubble::Initialise()
 {
@@ -68,13 +73,7 @@ void Bubble::SetTileMap(TileMap* tilemap)
 	map = tilemap;
 }
 bool Bubble::IsAlive()const {
-	if (alive == true) {
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return  alive;
 }
 void Bubble::SetAnimation(int id)
 {
@@ -86,12 +85,18 @@ BBAnim Bubble::GetAnimation()
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	return (BBAnim)sprite->GetAnimation();
 }
-void Bubble::Update() {
+EnemyType Bubble::GetEnemy() const
+{
+	return enemyType;
+}
+EnemyType Bubble::Update(const AABB& box){
+	EnemyType flag = EnemyType::ZERO;
 	MoveX();
 	MoveY();
-	BubbleCnt();
+	BubbleCnt(flag);
 	Sprite* sprite = dynamic_cast<Sprite*>(render);
 	sprite->Update();
+	return flag;
 }
 void Bubble::MoveX ()
 {
@@ -130,7 +135,7 @@ void Bubble::MoveY()
 		pos.y -= BUBBLE_DASHY;
 	}
 }
-void Bubble::BubbleCnt()
+void Bubble::BubbleCnt(EnemyType& flag)
 {
 	if (state != BBState::SHOT) {
 		bubbleTimer += GetFrameTime();
@@ -160,6 +165,9 @@ void Bubble::Release()
 {
 	ResourceManager& data = ResourceManager::Instance();
 	data.ReleaseTexture(Resource::IMG_BUBBLES);
-
-	render->Release();
+	if (render != nullptr) {
+		render->Release();
+		delete render;
+		render = nullptr;
+	}
 }

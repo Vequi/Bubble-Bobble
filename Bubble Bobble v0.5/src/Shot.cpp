@@ -26,6 +26,14 @@ void Shot::SetTileMap(TileMap* tilemap)
 {
 	map = tilemap;
 }
+EnemyType Shot::Update(const AABB& box)
+{
+	return EnemyType::NONE;
+}
+bool Shot::Update()
+{
+	return false;
+}
 bool Shot::IsMovingLeft() const
 {
 	return dir.x < 0;
@@ -37,4 +45,8 @@ bool Shot::IsMovingRight() const
 void Shot::DrawDebug(const Color& col) const
 {
 	Entity::DrawHitbox(pos.x, pos.y, width, height, col);
+}
+EnemyType Shot::GetEnemy() const {
+
+		return EnemyType::ZERO;
 }

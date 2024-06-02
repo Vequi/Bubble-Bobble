@@ -41,16 +41,16 @@ public:
 	~Bubble();
 	AppStatus Initialise();
 	void SetTileMap(TileMap* tilemap);
-	void Update();
+	EnemyType Update(const AABB& box) override;
 	void DrawDebug(const Color& col) const;
 	void Release();
 	bool IsAlive() const;
-
+	EnemyType GetEnemy() const override;
 private:
 
 	void MoveX();
 	void MoveY();
-	void BubbleCnt();
+	void BubbleCnt(EnemyType& flag);
 
 	bool alive;
 	bool moving;
@@ -59,6 +59,7 @@ private:
 	void SetAnimation(int id);
 	BBAnim GetAnimation();
 
+	EnemyType enemyType;
 
 	BBState state;
 	BBDirection direction;

@@ -7,6 +7,8 @@
 
 #define MAX_SHOTS		16
 
+class EnemyManager;
+
 class ShotManager
 {
 public:

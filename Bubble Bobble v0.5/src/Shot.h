@@ -19,10 +19,14 @@ public:
 	virtual ~Shot();
 
 	void Init(const Point& p, const Point& d);
+	virtual EnemyType Update(const AABB& box);
+	virtual bool Update();
 	bool IsMovingLeft() const;
 	bool IsMovingRight() const;
 	void DrawDebug(const Color& col) const;
 	void SetTileMap(TileMap* tilemap);
+	virtual EnemyType GetEnemy() const;
+
 	
 protected:
 

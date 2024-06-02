@@ -12,7 +12,7 @@
 #define MAITA_PHYSICAL_WIDTH	12
 #define MAITA_PHYSICAL_HEIGHT	14
 
-enum class EnemyType { NONE, ZENCHAN, MAITA };
+enum class EnemyType { ZERO, NONE, ZENCHAN, MAITA };
 
 class Enemy : public Entity
 {

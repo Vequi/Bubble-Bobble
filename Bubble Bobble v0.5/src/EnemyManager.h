@@ -2,6 +2,8 @@
 #include "Enemy.h"
 #include "ShotManager.h"
 
+class ShotManager;
+
 class EnemyManager
 {
 public:
@@ -10,7 +12,7 @@ public:
 
 	AppStatus Initialise();
 
-	//Set the ShotManager reference for managing enemy shots
+	
 	void SetShotManager(ShotManager* shots);
 
 	//Add a new enemy with the given position, type, action area and looking direction

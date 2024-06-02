@@ -57,6 +57,18 @@ int Object::Points() const
 		SetSoundVolume(objectPickup[0], 0.1f);
 		return POINTS_BOTTLE;
 	}
+	else if (type == ObjectType::ICECREAM) {
+		objectPickup[0] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/GrabFruitSFX.wav");
+		PlaySound(objectPickup[0]);
+		SetSoundVolume(objectPickup[0], 0.1f);
+		return POINTS_ICECREAM;
+	}
+	else if (type == ObjectType::REDGEM) {
+		objectPickup[0] = LoadSound("BubbleBobble_Audio&SFX/SFX_WAV/GrabFruitSFX.wav");
+		PlaySound(objectPickup[0]);
+		SetSoundVolume(objectPickup[0], 0.1f);
+		return POINTS_REDGEM;
+	}
 	else
 	{
 		LOG("Internal error: object type invalid when giving points");

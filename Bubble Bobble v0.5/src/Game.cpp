@@ -8,7 +8,8 @@ Sound music[10];
 
 Game::Game()
 {
-    : clickCount(0);
+    clickCount = 0;
+    maxClicks = 99;
     state = GameState::MAIN_MENU;
     state = GameState::INITIAL1;
     scene = nullptr;

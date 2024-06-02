@@ -20,10 +20,33 @@ _Quilmo Studios logo_
 
 _Quilmo Studios Members_
 
+<h1>CONTROLS</h1>
+
+### Intro
+
+    * ESC -> Exit Game
+    * SPACE -> Skip Menus
+    * RIGHT_SHIFT -> Insert Coin (not implemented yet)
+   
+### Player 1 (Keyboard)
+
+    * W -> Jump
+    * A -> Move to the left
+    * D -> Move to the right
+    * LEFT_SHIFT -> Bubble
+    
+## Debug Tools
+
+    * F1 -> Check hitboxes
 
 <h1>YOUTUBE VIDEO</h1>
 
 
+_Gameplay_
+
 <h1>INSTALL LATEST RELEASE</h1>
 
+<h1>CHECK OUR REPOSITORY <a href = "https://github.com/Vequi/BubbleBobble-QuilmoStudios">HERE</a></h1>
+
+<h1>FOR MORE INFORMATION <a href = "https://github.com/Vequi/BubbleBobble-QuilmoStudios/wiki">WIKI</a></h1>
 

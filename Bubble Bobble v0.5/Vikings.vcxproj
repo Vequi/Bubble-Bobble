@@ -115,8 +115,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Carlos Vega\Documents\GitHub\BubbleBobble\raylib\include;C:\Users\oscar\Documents\GitHub\Bubble-Bobble\raylib\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Carlos Vega\Documents\GitHub\BubbleBobble\raylib\lib;C:\Users\oscar\Documents\GitHub\Bubble-Bobble\raylib\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Carlos Vega\Documents\GitHub\BubbleBobble\raylib\include;C:\Users\oscar\Documents\GitHub\Bubble-Bobble\raylib\include;C:\Users\Marc Amo\OneDrive\Desktop\raylib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Carlos Vega\Documents\GitHub\BubbleBobble\raylib\lib;C:\Users\oscar\Documents\GitHub\Bubble-Bobble\raylib\lib;C:\Users\Marc Amo\OneDrive\Desktop\raylib\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

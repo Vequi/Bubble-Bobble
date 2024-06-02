@@ -8,6 +8,7 @@ Sound music[10];
 
 Game::Game()
 {
+    : clickCount(0);
     state = GameState::MAIN_MENU;
     state = GameState::INITIAL1;
     scene = nullptr;
@@ -233,14 +234,17 @@ AppStatus Game::Update()
         }
         break;
     case GameState::INSERT_COIN:
-        
         if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
-        if (IsKeyPressed(KEY_SPACE))
-        {
-
+        if (IsKeyPressed(KEY_ENTER)) {
+            if (clickCount < maxClicks) {
+                clickCount++;
+            }
+        }
+        if (IsKeyPressed(KEY_SPACE)) {
             state = GameState::PLAYER_SELC;
         }
         break;
+
     case GameState::PLAYER_SELC:
         
         if (IsKeyPressed(KEY_ESCAPE)) return AppStatus::QUIT;
@@ -295,6 +299,7 @@ void Game::Render()
     case GameState::INSERT_COIN:
         DrawTexture(*img_insertcoin, 0, 0, WHITE);
         RenderScore();
+        DrawText(TextFormat("Contador: %02i", clickCount), WINDOW_WIDTH - 100, WINDOW_HEIGHT - 30, 20, BLACK); 
         break;
     case GameState::PLAYER_SELC:
         DrawTexture(*img_player_selc, 0, 0, WHITE);

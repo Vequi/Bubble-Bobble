@@ -1,20 +1,24 @@
 #pragma once
 #include "Entity.h"
 #include "TileMap.h"
+#include "Shot.h"
 
 #define BUBBLE_FRAME_SIZE 16
 #define BUBBLE_PHYSICAL_WIDTH 12
 #define BUBBLE_PHYSICAL_HEIGHT 14
+
+#define BUBBLE_HEIGHT 40
+#define BUBBLE_MARGIN_Y 16
+#define BUBBLE_OFFSET 7
 
 #define BUBBLE_SPEED 1.0f
 #define BUBBLE_FORCE 10
 
 #define BUBBLE_DELAY 2
 
-#define BUBBLE_DASHX 5
+#define BUBBLE_DASHX 3
 #define BUBBLE_DASHY 1
 
-//Bubble Timers
 #define RED_TIME				7		
 #define BLINK_TIME				10
 #define POP_TIME				12
@@ -44,17 +48,15 @@ public:
 
 private:
 
-	//Bubble Mechanics
+
 	void MoveX();
 	void MoveY();
 	void BubbleCnt();
 
-	//Bubble destruction;
 	bool alive;
 	bool moving;
 	float bubbleTimer;
 
-	//Animation management
 	void SetAnimation(int id);
 	BBAnim GetAnimation();
 

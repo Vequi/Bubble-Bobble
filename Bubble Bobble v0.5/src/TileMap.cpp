@@ -58,44 +58,45 @@ void TileMap::InitTileDictionary()
 	dict_rect[(int)Tile::L6SHADE_CORNERB] = { 9*n, 35*n, n, n };
 	dict_rect[(int)Tile::L6SHADE_3D] = { 2*n, 38*n, n, n };	
 	
-	dict_rect[(int)Tile::L34BLOCK] = { 0, 82*n, n, n };
-	dict_rect[(int)Tile::L34BLOCK_NUMT1] = { 0, 80*n, n, n};
-	dict_rect[(int)Tile::L34BLOCK_NUMT2] = { n, 80*n, n, n };	
-	dict_rect[(int)Tile::L34BLOCK_NUMB1] = { 0, 81*n, n, n};
-	dict_rect[(int)Tile::L34BLOCK_NUMB2] = { n, 81*n, n, n };
+	dict_rect[(int)Tile::L34BLOCKTL] = { 0, 82*n, n, n };
+	dict_rect[(int)Tile::L34BLOCK] = { 3*n, 62 * n, n, n };
+	dict_rect[(int)Tile::L34BLOCK_NUMT1] = { 0, 66*n, n, n};
+	dict_rect[(int)Tile::L34BLOCK_NUMT2] = { n, 66*n, n, n };	
+	dict_rect[(int)Tile::L34BLOCK_NUMB1] = { 0, 67*n, n, n};
+	dict_rect[(int)Tile::L34BLOCK_NUMB2] = { n, 67*n, n, n };
 
-	dict_rect[(int)Tile::L34SHADE_RIGHT] = { 6*n, 59*n, n, n };
-	dict_rect[(int)Tile::L34SHADE_CORNER] = { 2*n, 55*n, n, n };
-	dict_rect[(int)Tile::L34SHADE_B] = { 5*n, 60*n, n, n };
-	dict_rect[(int)Tile::L34SHADE_BD] = { 4*n, 60*n, n, n };
-	dict_rect[(int)Tile::L34SHADE_CORNERB] = { 6*n, 60*n, n, n };
-	dict_rect[(int)Tile::L34SHADE_3D] = { 2*n, 56*n, n, n };	
+	dict_rect[(int)Tile::L34SHADE_RIGHT] = { 3*n, 67*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_CORNER] = { 2*n, 67*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_B] = { 2*n, 68*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_BD] = { 9*n, 67*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_CORNERB] = { 9*n, 69*n, n, n };
+	dict_rect[(int)Tile::L34SHADE_3D] = { 13*n, 67*n, n, n };	
 	
-	dict_rect[(int)Tile::L46BLOCK] = { 0, 82 * n, n, n };
-	dict_rect[(int)Tile::L46BLOCK_NUMT1] = { 0, 80 * n, n, n };
-	dict_rect[(int)Tile::L46BLOCK_NUMT2] = { n, 81 * n, n, n };
-	dict_rect[(int)Tile::L46BLOCK_NUMB1] = { 0, 80 * n, n, n };
-	dict_rect[(int)Tile::L46BLOCK_NUMB2] = { n, 81 * n, n, n };
+	dict_rect[(int)Tile::L46BLOCK] = { 0, 97 * n, n, n };
+	dict_rect[(int)Tile::L46BLOCK_NUMT1] = { 0, 98 * n, n, n };
+	dict_rect[(int)Tile::L46BLOCK_NUMT2] = { n, 98 * n, n, n };
+	dict_rect[(int)Tile::L46BLOCK_NUMB1] = { 0, 99 * n, n, n };
+	dict_rect[(int)Tile::L46BLOCK_NUMB2] = { n, 99 * n, n, n };
 						  
-	dict_rect[(int)Tile::L46SHADE_RIGHT] = { 10 * n, 95 * n, n, n };
-	dict_rect[(int)Tile::L46SHADE_CORNER] = { 2 * n, 86 * n, n, n };
-	dict_rect[(int)Tile::L46SHADE_B] = { 7 * n, 96 * n, n, n };
-	dict_rect[(int)Tile::L46SHADE_BD] = { 6 * n, 96 * n, n, n };
-	dict_rect[(int)Tile::L46SHADE_CORNERB] = { 10 * n, 96 * n, n, n };
-	dict_rect[(int)Tile::L46SHADE_3D] = { 2 * n, 87 * n, n, n };	
+	dict_rect[(int)Tile::L46SHADE_RIGHT] = { 4 * n, 99 * n, n, n };
+	dict_rect[(int)Tile::L46SHADE_CORNER] = { 3 * n, 99 * n, n, n };
+	dict_rect[(int)Tile::L46SHADE_B] = { 3 * n, 100 * n, n, n };
+	dict_rect[(int)Tile::L46SHADE_BD] = { 6 * n, 102 * n, n, n };
+	dict_rect[(int)Tile::L46SHADE_CORNERB] = { 4 * n, 102 * n, n, n };
+	dict_rect[(int)Tile::L46SHADE_3D] = { 6 * n, 100 * n, n, n };	
 	
-	dict_rect[(int)Tile::L100BLOCK] = { 0, 108 * n, n, n };
-	dict_rect[(int)Tile::L100BLOCK_NUMT1] = { 0, 106 * n, n, n };
-	dict_rect[(int)Tile::L100BLOCK_NUMT2] = { n, 106 * n, n, n };
-	dict_rect[(int)Tile::L100BLOCK_NUMB1] = { 0, 107 * n, n, n };
-	dict_rect[(int)Tile::L100BLOCK_NUMB2] = { n, 107 * n, n, n };
+	dict_rect[(int)Tile::L100BLOCK] = { 0, 129 * n, n, n };
+	dict_rect[(int)Tile::L100BLOCK_NUMT1] = { 0, 130 * n, n, n };
+	dict_rect[(int)Tile::L100BLOCK_NUMT2] = { n, 130 * n, n, n };
+	dict_rect[(int)Tile::L100BLOCK_NUMB1] = { 0, 131 * n, n, n };
+	dict_rect[(int)Tile::L100BLOCK_NUMB2] = { n, 131 * n, n, n };
 						  
-	dict_rect[(int)Tile::L100SHADE_RIGHT] = { 11 * n, 111 * n, n, n };
-	dict_rect[(int)Tile::L100SHADE_CORNER] = { 2 * n, 107 * n, n, n };
-	dict_rect[(int)Tile::L100SHADE_B] = { 10 * n, 112 * n, n, n };
-	dict_rect[(int)Tile::L100SHADE_BD] = { 9 * n, 112 * n, n, n };
-	dict_rect[(int)Tile::L100SHADE_CORNERB] = { 11 * n, 112 * n, n, n };
-	dict_rect[(int)Tile::L100SHADE_3D] = { 2 * n, 108 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_RIGHT] = { 3 * n, 131 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_CORNER] = { 2 * n, 131 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_B] = { 2 * n, 132 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_BD] = { 9 * n, 136 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_CORNERB] = { 11 * n, 136 * n, n, n };
+	dict_rect[(int)Tile::L100SHADE_3D] = { 11 * n, 135 * n, n, n };
 	
 
 	dict_rect[(int)Tile::BLOCK_SQUARE1_TL] = { 0,  0, n, n };

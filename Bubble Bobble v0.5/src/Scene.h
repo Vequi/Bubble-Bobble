@@ -33,6 +33,7 @@ private:
     std::vector<Object*> objects;
     std::vector<Bubble*> bubbleEnemies;
 
+    int currentStage;
     Camera2D camera;
     DebugMode debug;
 };

@@ -99,6 +99,20 @@ void Bubble::MoveX ()
 {
 	AABB box;
 	int prev_x = pos.x;
+	//if (pos.y <= BUBBLE_HEIGHT) {
+	//	//left movement
+	//	if (WINDOW_WIDTH / 2 - BUBBLE_OFFSET + BUBBLE_MARGIN_Y <= pos.x)
+	//	{
+	//		pos.x -= BUBBLE_DASHX;
+	//		dir.x = -dir.x;
+	//	}
+	//	//right movement
+	//	else if (WINDOW_WIDTH / 2 - BUBBLE_OFFSET - BUBBLE_MARGIN_Y >= pos.x)
+	//	{
+	//		pos.x += BUBBLE_DASHX;
+	//		dir.x = -dir.x;
+	//	}
+	//}
 
 	if (moving == true) {
 		if (state == BBState::SHOT) {
@@ -147,11 +161,15 @@ void Bubble::MoveX ()
 void Bubble::MoveY()
 {
 	if (moving == true) {
-		if(state!=BBState::SHOT&&pos.y>40)
+		if (state != BBState::SHOT && pos.y > 40)
 		{
 			pos.y -= BUBBLE_DASHY;
 		}
 	}
+	//if (pos.y > BUBBLE_HEIGHT)
+	//{
+	//	pos.y -= BUBBLE_DASHY;
+	//}
 }
 void Bubble::BubbleCnt()
 {

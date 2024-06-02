@@ -42,7 +42,8 @@ private:
     float timer=0;
     float total_time=2.0f;
     float time_elapsed=0.0f;
-
+    int clickCount;
+    const int maxClicks = 20;
 
     //To work with original game units and then scale the result
     RenderTexture2D target;

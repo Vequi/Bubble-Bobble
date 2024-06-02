@@ -41,6 +41,10 @@ _Quilmo Studios Members_
 
 <h1>YOUTUBE VIDEO</h1>
 
+<h3>V0.5</h3>
+<iframe width="740" height="590" src="https://www.youtube.com/embed/ze9YP9dbtJI" frameborder="0" allowfullscreen=""></iframe>
+
+<h3>V1.0</h3>
 <iframe width="740" height="590" src="https://www.youtube.com/embed/0Gqjm8cHbeI" frameborder="0" allowfullscreen=""></iframe>
 
 <h1>INSTALL LATEST <a href = "https://github.com/Vequi/BubbleBobble-QuilmoStudios/releases/tag/v1.0">RELEASE</a></h1>

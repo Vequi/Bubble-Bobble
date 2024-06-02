@@ -22,6 +22,7 @@ If you want more information about the game, check out our wiki at the following
 
 ## Installation
 https://github.com/Vequi/BubbleBobble-QuilmoStudios/releases/tag/v1.0
+
 **_Unzip the release folder and execute the .exe file._**
 
 ## 1 minute YT Video

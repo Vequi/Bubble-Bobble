@@ -18,7 +18,22 @@ int main()
         LOG("Failed to initialise game");
         main_return = EXIT_FAILURE;
     }
-        
+       
+    if (!IsWindowFullscreen())
+    {
+        int monitor = GetCurrentMonitor();
+        SetWindowSize(GetMonitorWidth(monitor), GetMonitorHeight(monitor));
+        ToggleFullscreen();
+        SetWindowPosition(GetMonitorWidth(monitor)/3, 0);
+    }
+    else
+    {
+        int monitor = GetCurrentMonitor();
+        ToggleFullscreen();
+        SetWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        SetWindowPosition(GetMonitorWidth(monitor) / 3, 0);
+    }
+
     while (status == AppStatus::OK)
     {
         status = game->Update();

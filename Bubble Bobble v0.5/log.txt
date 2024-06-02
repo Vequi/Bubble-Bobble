@@ -1,73 +1,422 @@
-Project executed on 02-06-2024 at 18:13:06.
+Project executed on 02-06-2024 at 19:11:34.
 main.cpp(13): Application start
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (9, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (9, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (9, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (9, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (9, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (9, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (9, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (9, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (10, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 27)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 28)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 28)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 26)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 28)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 28)
 TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 28)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (11, 28)
-TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (12, 28)
-main.cpp(34): Application finish
-main.cpp(37): Bye :)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (13, 28)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (3, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (4, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (3, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (4, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (3, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (4, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (3, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (4, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (3, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (4, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (3, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (4, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (3, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (4, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (4, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (4, 28)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 28)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 26)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 27)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 28)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (4, 28)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (5, 28)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -3)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -3)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -2)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (22, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (23, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (21, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (20, -1)
+TileMap.cpp(195): Error: Index out of bounds. Tile map dimensions: 32x26. Given index: (20, -1)
+Scene.cpp(259): Failed to load level, stage 6 doesn't exist
+Scene.cpp(259): Failed to load level, stage 7 doesn't exist
+Scene.cpp(259): Failed to load level, stage 8 doesn't exist
+Scene.cpp(259): Failed to load level, stage 9 doesn't exist
+Scene.cpp(259): Failed to load level, stage 10 doesn't exist
+Scene.cpp(259): Failed to load level, stage 11 doesn't exist
+Scene.cpp(259): Failed to load level, stage 12 doesn't exist
+Scene.cpp(259): Failed to load level, stage 13 doesn't exist
+Scene.cpp(259): Failed to load level, stage 14 doesn't exist
+Scene.cpp(259): Failed to load level, stage 15 doesn't exist
+Scene.cpp(259): Failed to load level, stage 16 doesn't exist
+Scene.cpp(259): Failed to load level, stage 17 doesn't exist
+Scene.cpp(259): Failed to load level, stage 18 doesn't exist
+Scene.cpp(259): Failed to load level, stage 19 doesn't exist
+Scene.cpp(259): Failed to load level, stage 20 doesn't exist
+Scene.cpp(259): Failed to load level, stage 21 doesn't exist
+Scene.cpp(259): Failed to load level, stage 22 doesn't exist
+Scene.cpp(259): Failed to load level, stage 23 doesn't exist
+Scene.cpp(259): Failed to load level, stage 24 doesn't exist
+Scene.cpp(259): Failed to load level, stage 25 doesn't exist
+Scene.cpp(259): Failed to load level, stage 26 doesn't exist
+Scene.cpp(259): Failed to load level, stage 27 doesn't exist
+Scene.cpp(259): Failed to load level, stage 28 doesn't exist
+Scene.cpp(259): Failed to load level, stage 29 doesn't exist
+Scene.cpp(259): Failed to load level, stage 30 doesn't exist
+Scene.cpp(259): Failed to load level, stage 31 doesn't exist
+Scene.cpp(259): Failed to load level, stage 32 doesn't exist
+Scene.cpp(259): Failed to load level, stage 33 doesn't exist
+Scene.cpp(259): Failed to load level, stage 34 doesn't exist
+Scene.cpp(259): Failed to load level, stage 35 doesn't exist
+Scene.cpp(259): Failed to load level, stage 36 doesn't exist
+Scene.cpp(259): Failed to load level, stage 37 doesn't exist
+Scene.cpp(259): Failed to load level, stage 38 doesn't exist
+Scene.cpp(259): Failed to load level, stage 39 doesn't exist
+Scene.cpp(259): Failed to load level, stage 40 doesn't exist
+Scene.cpp(259): Failed to load level, stage 41 doesn't exist
+Scene.cpp(259): Failed to load level, stage 42 doesn't exist
+Scene.cpp(259): Failed to load level, stage 43 doesn't exist
+Scene.cpp(259): Failed to load level, stage 44 doesn't exist
+Scene.cpp(259): Failed to load level, stage 45 doesn't exist
+Scene.cpp(259): Failed to load level, stage 46 doesn't exist
+Scene.cpp(259): Failed to load level, stage 47 doesn't exist
+Scene.cpp(259): Failed to load level, stage 48 doesn't exist
+Scene.cpp(259): Failed to load level, stage 49 doesn't exist
+Scene.cpp(259): Failed to load level, stage 50 doesn't exist
+Scene.cpp(259): Failed to load level, stage 51 doesn't exist
+Scene.cpp(259): Failed to load level, stage 52 doesn't exist
+Scene.cpp(259): Failed to load level, stage 53 doesn't exist
+Scene.cpp(259): Failed to load level, stage 54 doesn't exist
+Scene.cpp(259): Failed to load level, stage 55 doesn't exist
+Scene.cpp(259): Failed to load level, stage 56 doesn't exist
+Scene.cpp(259): Failed to load level, stage 57 doesn't exist
+Scene.cpp(259): Failed to load level, stage 58 doesn't exist
+Scene.cpp(259): Failed to load level, stage 59 doesn't exist
+Scene.cpp(259): Failed to load level, stage 60 doesn't exist
+Scene.cpp(259): Failed to load level, stage 61 doesn't exist
+Scene.cpp(259): Failed to load level, stage 62 doesn't exist
+Scene.cpp(259): Failed to load level, stage 63 doesn't exist
+Scene.cpp(259): Failed to load level, stage 64 doesn't exist
+Scene.cpp(259): Failed to load level, stage 65 doesn't exist
+Scene.cpp(259): Failed to load level, stage 66 doesn't exist
+Scene.cpp(259): Failed to load level, stage 67 doesn't exist
+Scene.cpp(259): Failed to load level, stage 68 doesn't exist
+Scene.cpp(259): Failed to load level, stage 69 doesn't exist
+Scene.cpp(259): Failed to load level, stage 70 doesn't exist
+Scene.cpp(259): Failed to load level, stage 71 doesn't exist
+Scene.cpp(259): Failed to load level, stage 72 doesn't exist
+Scene.cpp(259): Failed to load level, stage 73 doesn't exist
+Scene.cpp(259): Failed to load level, stage 74 doesn't exist
+Scene.cpp(259): Failed to load level, stage 75 doesn't exist
+Scene.cpp(259): Failed to load level, stage 76 doesn't exist
+Scene.cpp(259): Failed to load level, stage 77 doesn't exist
+Scene.cpp(259): Failed to load level, stage 78 doesn't exist
+Scene.cpp(259): Failed to load level, stage 79 doesn't exist
+Scene.cpp(259): Failed to load level, stage 80 doesn't exist
+Scene.cpp(259): Failed to load level, stage 81 doesn't exist
+Scene.cpp(259): Failed to load level, stage 82 doesn't exist
+Scene.cpp(259): Failed to load level, stage 83 doesn't exist
+Scene.cpp(259): Failed to load level, stage 84 doesn't exist
+Scene.cpp(259): Failed to load level, stage 85 doesn't exist
+Scene.cpp(259): Failed to load level, stage 86 doesn't exist
+Scene.cpp(259): Failed to load level, stage 87 doesn't exist
+Scene.cpp(259): Failed to load level, stage 88 doesn't exist
+Scene.cpp(259): Failed to load level, stage 89 doesn't exist
+Scene.cpp(259): Failed to load level, stage 90 doesn't exist
+Scene.cpp(259): Failed to load level, stage 91 doesn't exist
+Scene.cpp(259): Failed to load level, stage 92 doesn't exist
+Scene.cpp(259): Failed to load level, stage 93 doesn't exist
+Scene.cpp(259): Failed to load level, stage 94 doesn't exist
+Scene.cpp(259): Failed to load level, stage 95 doesn't exist
+Scene.cpp(259): Failed to load level, stage 96 doesn't exist
+Scene.cpp(259): Failed to load level, stage 97 doesn't exist
+Scene.cpp(259): Failed to load level, stage 98 doesn't exist
+Scene.cpp(259): Failed to load level, stage 99 doesn't exist
+Scene.cpp(259): Failed to load level, stage 100 doesn't exist
+Scene.cpp(259): Failed to load level, stage 101 doesn't exist
+Scene.cpp(259): Failed to load level, stage 102 doesn't exist
+Scene.cpp(259): Failed to load level, stage 103 doesn't exist
+Scene.cpp(259): Failed to load level, stage 104 doesn't exist
+Scene.cpp(259): Failed to load level, stage 105 doesn't exist
+Scene.cpp(259): Failed to load level, stage 106 doesn't exist
+Scene.cpp(259): Failed to load level, stage 107 doesn't exist
+Scene.cpp(259): Failed to load level, stage 108 doesn't exist
+Scene.cpp(259): Failed to load level, stage 109 doesn't exist
+Scene.cpp(259): Failed to load level, stage 110 doesn't exist
+Scene.cpp(259): Failed to load level, stage 111 doesn't exist
+Scene.cpp(259): Failed to load level, stage 112 doesn't exist
+Scene.cpp(259): Failed to load level, stage 113 doesn't exist
+Scene.cpp(259): Failed to load level, stage 114 doesn't exist
+Scene.cpp(259): Failed to load level, stage 115 doesn't exist
+Scene.cpp(259): Failed to load level, stage 116 doesn't exist
+Scene.cpp(259): Failed to load level, stage 117 doesn't exist
+Scene.cpp(259): Failed to load level, stage 118 doesn't exist
+Scene.cpp(259): Failed to load level, stage 119 doesn't exist
+Scene.cpp(259): Failed to load level, stage 120 doesn't exist
+Scene.cpp(259): Failed to load level, stage 121 doesn't exist
+Scene.cpp(259): Failed to load level, stage 122 doesn't exist
+Scene.cpp(259): Failed to load level, stage 123 doesn't exist
+Scene.cpp(259): Failed to load level, stage 124 doesn't exist
+Scene.cpp(259): Failed to load level, stage 125 doesn't exist
+Scene.cpp(259): Failed to load level, stage 126 doesn't exist
+Scene.cpp(259): Failed to load level, stage 127 doesn't exist
+Scene.cpp(259): Failed to load level, stage 128 doesn't exist
+Scene.cpp(259): Failed to load level, stage 129 doesn't exist
+Scene.cpp(259): Failed to load level, stage 130 doesn't exist
+Scene.cpp(259): Failed to load level, stage 131 doesn't exist
+Scene.cpp(259): Failed to load level, stage 132 doesn't exist
+Scene.cpp(259): Failed to load level, stage 133 doesn't exist
+Scene.cpp(259): Failed to load level, stage 134 doesn't exist
+Scene.cpp(259): Failed to load level, stage 135 doesn't exist
+Scene.cpp(259): Failed to load level, stage 136 doesn't exist
+Scene.cpp(259): Failed to load level, stage 137 doesn't exist
+Scene.cpp(259): Failed to load level, stage 138 doesn't exist
+Scene.cpp(259): Failed to load level, stage 139 doesn't exist
+Scene.cpp(259): Failed to load level, stage 140 doesn't exist
+Scene.cpp(259): Failed to load level, stage 141 doesn't exist
+Scene.cpp(259): Failed to load level, stage 142 doesn't exist
+Scene.cpp(259): Failed to load level, stage 143 doesn't exist
+Scene.cpp(259): Failed to load level, stage 144 doesn't exist
+Scene.cpp(259): Failed to load level, stage 145 doesn't exist
+Scene.cpp(259): Failed to load level, stage 146 doesn't exist
+Scene.cpp(259): Failed to load level, stage 147 doesn't exist
+Scene.cpp(259): Failed to load level, stage 148 doesn't exist
+Scene.cpp(259): Failed to load level, stage 149 doesn't exist
+Scene.cpp(259): Failed to load level, stage 150 doesn't exist
+Scene.cpp(259): Failed to load level, stage 151 doesn't exist
+Scene.cpp(259): Failed to load level, stage 152 doesn't exist
+Scene.cpp(259): Failed to load level, stage 153 doesn't exist
+Scene.cpp(259): Failed to load level, stage 154 doesn't exist
+Scene.cpp(259): Failed to load level, stage 155 doesn't exist
+Scene.cpp(259): Failed to load level, stage 156 doesn't exist
+Scene.cpp(259): Failed to load level, stage 157 doesn't exist
+Scene.cpp(259): Failed to load level, stage 158 doesn't exist
+Scene.cpp(259): Failed to load level, stage 159 doesn't exist
+Scene.cpp(259): Failed to load level, stage 160 doesn't exist
+Scene.cpp(259): Failed to load level, stage 161 doesn't exist
+Scene.cpp(259): Failed to load level, stage 162 doesn't exist
+Scene.cpp(259): Failed to load level, stage 163 doesn't exist
+Scene.cpp(259): Failed to load level, stage 164 doesn't exist
+Scene.cpp(259): Failed to load level, stage 165 doesn't exist
+Scene.cpp(259): Failed to load level, stage 166 doesn't exist
+Scene.cpp(259): Failed to load level, stage 167 doesn't exist
+Scene.cpp(259): Failed to load level, stage 168 doesn't exist
+Scene.cpp(259): Failed to load level, stage 169 doesn't exist
+Scene.cpp(259): Failed to load level, stage 170 doesn't exist
+Scene.cpp(259): Failed to load level, stage 171 doesn't exist
+Scene.cpp(259): Failed to load level, stage 172 doesn't exist
+Scene.cpp(259): Failed to load level, stage 173 doesn't exist
+Scene.cpp(259): Failed to load level, stage 174 doesn't exist
+Scene.cpp(259): Failed to load level, stage 175 doesn't exist
+Scene.cpp(259): Failed to load level, stage 176 doesn't exist
+Scene.cpp(259): Failed to load level, stage 177 doesn't exist
+Scene.cpp(259): Failed to load level, stage 178 doesn't exist
+Scene.cpp(259): Failed to load level, stage 179 doesn't exist
+Scene.cpp(259): Failed to load level, stage 180 doesn't exist
+Scene.cpp(259): Failed to load level, stage 181 doesn't exist
+Scene.cpp(259): Failed to load level, stage 182 doesn't exist
+Scene.cpp(259): Failed to load level, stage 183 doesn't exist
+Scene.cpp(259): Failed to load level, stage 184 doesn't exist
+Scene.cpp(259): Failed to load level, stage 185 doesn't exist
+Scene.cpp(259): Failed to load level, stage 186 doesn't exist
+Scene.cpp(259): Failed to load level, stage 187 doesn't exist
+Scene.cpp(259): Failed to load level, stage 188 doesn't exist
+Scene.cpp(259): Failed to load level, stage 189 doesn't exist
+Scene.cpp(259): Failed to load level, stage 190 doesn't exist
+Scene.cpp(259): Failed to load level, stage 191 doesn't exist
+Scene.cpp(259): Failed to load level, stage 192 doesn't exist
+Scene.cpp(259): Failed to load level, stage 193 doesn't exist
+Scene.cpp(259): Failed to load level, stage 194 doesn't exist
+Scene.cpp(259): Failed to load level, stage 195 doesn't exist
+Scene.cpp(259): Failed to load level, stage 196 doesn't exist
+Scene.cpp(259): Failed to load level, stage 197 doesn't exist
+Scene.cpp(259): Failed to load level, stage 198 doesn't exist
+Scene.cpp(259): Failed to load level, stage 199 doesn't exist
+Scene.cpp(259): Failed to load level, stage 200 doesn't exist
+Scene.cpp(259): Failed to load level, stage 201 doesn't exist
+Scene.cpp(259): Failed to load level, stage 202 doesn't exist
+Scene.cpp(259): Failed to load level, stage 203 doesn't exist
+Scene.cpp(259): Failed to load level, stage 204 doesn't exist
+Scene.cpp(259): Failed to load level, stage 205 doesn't exist
+Scene.cpp(259): Failed to load level, stage 206 doesn't exist
+Scene.cpp(259): Failed to load level, stage 207 doesn't exist
+Scene.cpp(259): Failed to load level, stage 208 doesn't exist
+Scene.cpp(259): Failed to load level, stage 209 doesn't exist
+Scene.cpp(259): Failed to load level, stage 210 doesn't exist
+Scene.cpp(259): Failed to load level, stage 211 doesn't exist
+Scene.cpp(259): Failed to load level, stage 212 doesn't exist
+Scene.cpp(259): Failed to load level, stage 213 doesn't exist
+Scene.cpp(259): Failed to load level, stage 214 doesn't exist
+Scene.cpp(259): Failed to load level, stage 215 doesn't exist
+Scene.cpp(259): Failed to load level, stage 216 doesn't exist
+Scene.cpp(259): Failed to load level, stage 217 doesn't exist
+Scene.cpp(259): Failed to load level, stage 218 doesn't exist
+Scene.cpp(259): Failed to load level, stage 219 doesn't exist
+Scene.cpp(259): Failed to load level, stage 220 doesn't exist
+Scene.cpp(259): Failed to load level, stage 221 doesn't exist
+Scene.cpp(259): Failed to load level, stage 222 doesn't exist
+Scene.cpp(259): Failed to load level, stage 223 doesn't exist
+Scene.cpp(259): Failed to load level, stage 224 doesn't exist
+Scene.cpp(259): Failed to load level, stage 225 doesn't exist
+Scene.cpp(259): Failed to load level, stage 226 doesn't exist
+Scene.cpp(259): Failed to load level, stage 227 doesn't exist
+Scene.cpp(259): Failed to load level, stage 228 doesn't exist
+Scene.cpp(259): Failed to load level, stage 229 doesn't exist
+Scene.cpp(259): Failed to load level, stage 230 doesn't exist
+Scene.cpp(259): Failed to load level, stage 231 doesn't exist
+Scene.cpp(259): Failed to load level, stage 232 doesn't exist
+Scene.cpp(259): Failed to load level, stage 233 doesn't exist
+Scene.cpp(259): Failed to load level, stage 234 doesn't exist
+Scene.cpp(259): Failed to load level, stage 235 doesn't exist
+Scene.cpp(259): Failed to load level, stage 236 doesn't exist
+Scene.cpp(259): Failed to load level, stage 237 doesn't exist
+Scene.cpp(259): Failed to load level, stage 238 doesn't exist
+Scene.cpp(259): Failed to load level, stage 239 doesn't exist
+Scene.cpp(259): Failed to load level, stage 240 doesn't exist
+Scene.cpp(259): Failed to load level, stage 241 doesn't exist
+Scene.cpp(259): Failed to load level, stage 242 doesn't exist
+Scene.cpp(259): Failed to load level, stage 243 doesn't exist
+Scene.cpp(259): Failed to load level, stage 244 doesn't exist
+Scene.cpp(259): Failed to load level, stage 245 doesn't exist
+main.cpp(49): Application finish
+main.cpp(52): Bye :)

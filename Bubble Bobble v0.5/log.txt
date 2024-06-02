@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-Project executed on 27-05-2024 at 22:53:46.
-=======
-Project executed on 28-05-2024 at 13:14:07.
->>>>>>> bubble-rework
+Project executed on 02-06-2024 at 16:29:54.
 main.cpp(13): Application start
+main.cpp(34): Application finish
+main.cpp(37): Bye :)

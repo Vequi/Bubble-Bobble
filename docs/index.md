@@ -14,7 +14,7 @@ _Bubble Bobble logo_
 _Quilmo Studios logo_
 
 <h2>Óscar Vega Quilcat</h2> <h3>Code, Design & Management - <a href = "https://github.com/Vequi">Github Account</a></h3>
-<h2>Marc Amo Mateu</h2> <h3>Art & QA - <a>https://github.com/mxarc</a></h3>
+<h2>Marc Amo Mateu</h2> <h3>Art & QA - <a href = "https://github.com/mxarc">Github Account</a></h3>
 
 <img src="https://github.com/Vequi/BubbleBobble/assets/120988212/587390f6-170d-4284-a2b8-9b8c7921d32e" width ="470" height="350" />
 

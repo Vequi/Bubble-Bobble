@@ -1,5 +1,5 @@
 
-<h1>Bubble Bobble 1986</h1>
+<h1>BUBBLE BOBBLE 1986</h1>
 
 Bubble Bobble is an arcade platform game from Fukio Mitsuji, originally developed and published by Taito in 1986. The players will control two dragons, the green one named Bub and the blue one named Bob who need to pass 100 levels to save their girlfriends. In each level, Bub and Bob must defeat each enemy with bubbles that they shoot from their mouths.
 
@@ -7,7 +7,7 @@ Bubble Bobble is an arcade platform game from Fukio Mitsuji, originally develope
 
 _Bubble Bobble logo_
 
-<h1>Quilmo Studios Members</h1>
+<h1>QUILMO STUDIOS MEMBERS</h1>
 
 <img src="https://github.com/Vequi/BubbleBobble/assets/120988212/015d3d76-1483-497b-8f1f-710c8d098747" width="400" height="400" />
 

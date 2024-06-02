@@ -41,7 +41,7 @@ _Quilmo Studios Members_
 
 <h1>YOUTUBE VIDEO <a href = "https://youtu.be/0Gqjm8cHbeI">HERE</a></h1>
 
-<iframe width="560" height="315" src="https://youtu.be/0Gqjm8cHbeI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/embed/0Gqjm8cHbeI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 <h1>INSTALL LATEST <a href = "https://github.com/Vequi/BubbleBobble-QuilmoStudios/releases/tag/v1.0">RELEASE</a></h1>

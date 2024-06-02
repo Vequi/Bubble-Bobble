@@ -41,7 +41,7 @@ _Quilmo Studios Members_
 
 <h1>YOUTUBE VIDEO <a href = "https://youtu.be/0Gqjm8cHbeI">HERE</a></h1>
 
-<h1>INSTALL LATEST RELEASE</h1>
+<h1>INSTALL LATEST <a href = "https://github.com/Vequi/BubbleBobble-QuilmoStudios/releases/tag/v1.0">RELEASE</a></h1>
 
 <h1>CHECK OUR REPOSITORY <a href = "https://github.com/Vequi/BubbleBobble-QuilmoStudios">HERE</a></h1>
 
